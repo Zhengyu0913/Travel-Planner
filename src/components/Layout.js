@@ -20,6 +20,9 @@ export default function Layout() {
     setInput(e.target.value);
     console.log(e.target.value);
   };
+  const removeInputHandler = () => {
+    setInput("");
+  };
   return (
     <>
       <Box
@@ -40,6 +43,7 @@ export default function Layout() {
             <HeaderLeft
               onInputChange={inputChangeHandler}
               value={input}
+              onRemoveInput={removeInputHandler}
             ></HeaderLeft>
             <HeaderRight></HeaderRight>
           </Box>

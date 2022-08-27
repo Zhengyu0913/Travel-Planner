@@ -19,6 +19,9 @@ export default function HeaderLeft(props) {
   const inputChangeHandler = (e) => {
     props.onInputChange(e);
   };
+  const searchClickHandler = () => {
+    props.onRemoveInput();
+  };
   return (
     <Stack direction="row" spacing={2} alignItems="center">
       <IconButton onClick={props.onDrawerOpen}>
@@ -55,7 +58,7 @@ export default function HeaderLeft(props) {
         }}
       >
         <Box component={Link} to={`/home/${props.value}`}>
-          <IconButton sx={{ p: "10px" }}>
+          <IconButton sx={{ p: "10px" }} onClick={searchClickHandler}>
             <SearchIcon />
           </IconButton>
         </Box>
@@ -63,6 +66,7 @@ export default function HeaderLeft(props) {
           sx={{ ml: 1, flex: 1 }}
           placeholder="Search place or activities"
           onChange={inputChangeHandler}
+          value={props.value}
         />
       </Paper>
     </Stack>
