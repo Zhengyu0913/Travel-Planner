@@ -1,7 +1,8 @@
 import { Button, Typography } from "@mui/material";
-import React from "react";
-
+import React, { useContext } from "react";
+import { AuthContext } from "../context/auth-context";
 export default function HeaderRight() {
+  const authCtx = useContext(AuthContext);
   const clickHandler = () => {
     console.log("clicked!");
   };
@@ -47,26 +48,28 @@ export default function HeaderRight() {
           Sign up
         </Typography>
       </Button>
-      <Button
-        href="/signin"
-        disableRipple
-        variant="text"
-        sx={{
-          "&:hover": {
-            backgroundColor: "#D5D5D5",
-            boxShadow: "none",
-          },
-        }}
-        onClick={clickHandler}
-      >
-        <Typography
-          color="#010101"
-          component={"div"}
-          sx={{ textTransform: "capitalize", fontWeight: "bold" }}
+      {!authCtx.isLoggedIn && (
+        <Button
+          href="/signin"
+          disableRipple
+          variant="text"
+          sx={{
+            "&:hover": {
+              backgroundColor: "#D5D5D5",
+              boxShadow: "none",
+            },
+          }}
+          onClick={clickHandler}
         >
-          Log in
-        </Typography>
-      </Button>
+          <Typography
+            color="#010101"
+            component={"div"}
+            sx={{ textTransform: "capitalize", fontWeight: "bold" }}
+          >
+            Log in
+          </Typography>
+        </Button>
+      )}
     </div>
   );
 }
