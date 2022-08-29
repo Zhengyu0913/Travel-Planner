@@ -5,9 +5,11 @@ import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import ActivityDetail from "./pages/ActivityDetail";
 import Home from "./pages/Home";
+import LandingPage from "./pages/LandingPage";
 import Place from "./pages/Place";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
+import TripDetail from "./pages/TripDetail";
 import Trips from "./pages/Trips";
 
 function App() {
@@ -38,7 +40,7 @@ function App() {
       >
         <Container sx={{ mt: 5 }}>
           <Routes>
-            <Route path="/" element={<Home></Home>}></Route>
+            <Route path="/" element={<LandingPage></LandingPage>}></Route>
             <Route path="/home" element={<Home></Home>}></Route>
             <Route path="/home/:place" element={<Place></Place>}></Route>
             <Route path="/signin" element={<Signin></Signin>}></Route>
@@ -47,6 +49,10 @@ function App() {
             <Route
               path="/home/:place/:activity"
               element={<ActivityDetail></ActivityDetail>}
+            ></Route>
+            <Route
+              path="/trips/details"
+              element={<TripDetail></TripDetail>}
             ></Route>
           </Routes>
         </Container>
