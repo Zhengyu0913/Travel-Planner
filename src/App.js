@@ -36,7 +36,7 @@ function App() {
           overflowY: "scroll",
         }}
       >
-        <Container sx={{ mt: 5 }}>
+        {/*<Container sx={{ mt: 5 }}>*/}
           <Routes>
             <Route path="/" element={<Home></Home>}></Route>
             <Route path="/home" element={<Home></Home>}></Route>
@@ -49,7 +49,7 @@ function App() {
               element={<ActivityDetail></ActivityDetail>}
             ></Route>
           </Routes>
-        </Container>
+        {/*</Container>*/}
       </Box>
     </Box>
   );
