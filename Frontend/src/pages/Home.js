@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Card from "../components/Card";
+
+import Cards from "../components/Cards";
 const defaultActivity = [
   { name: "eat", id: 1 },
   { name: "play", id: 2 },
@@ -13,14 +14,14 @@ export default function Home(props) {
       <ul>
         {activity.map((item, index) => {
           return (
-            <Card
+            <Cards
               key={index}
               placeName={item.name}
               placeId={item.id}
               availableTrips={props.curTrips}
               addTrip={props.onAddTrip}
               deleteTrip={props.onDeleteTrip}
-            ></Card>
+            ></Cards>
           );
         })}
       </ul>
