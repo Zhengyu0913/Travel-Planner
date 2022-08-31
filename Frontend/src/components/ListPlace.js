@@ -95,8 +95,8 @@ const List = (props) => {
         {props.places?.map((place, i) => (
           <Grid key={i} item xs={12}>
             <Card
-              placeName={place.properties.name}
-              placeId={place.properties.xid}
+              placeName={place.name}
+              placeId={place.xid}
               availableTrips={props.availableTrips}
               addTrip={props.addTrip}
               deleteTrip={props.deleteTrip}

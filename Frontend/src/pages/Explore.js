@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import ListPlace from "../components/ListPlace";
 import Map from "../components/Map/Map";
 import { getPlacesData } from "../components/utils";
+import { getPlaceDetails } from "../components/utils/getPlaceDetails";
 
 export default function Explore(props) {
   const [places, setPlaces] = useState([]);
@@ -18,12 +19,22 @@ export default function Explore(props) {
   }, []);
   useEffect(() => {
     if (bounds) {
+      setPlaces([]); //每次刷新地图时，清空places
       getPlacesData(bounds.sw, bounds.ne).then((data) => {
-        setPlaces(
-          data.filter(
-            (place) => place.properties.name && place.properties.rate > 1
-          )
-        );
+        const xidArr = data.map((item) => item.properties.xid);
+        console.log(xidArr);
+        const filteredArr = xidArr.slice(0, 20);
+        console.log(filteredArr);
+
+        for (let i = 0; i < filteredArr.length; i++) {
+          const id = xidArr[i];
+
+          getPlaceDetails(id).then((res) => {
+            setPlaces((prev) => {
+              return [...prev, res];
+            }); //在异步请求里面，state更新时，需要用到前一个状态照片,如果直接更新，状态保持不变
+          });
+        }
       });
     }
   }, [bounds]);
