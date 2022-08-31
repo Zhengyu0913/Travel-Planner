@@ -10,6 +10,7 @@ export default function Explore(props) {
   const [autocomplete, setAutocomplete] = useState(null);
   const [coords, setCoords] = useState({});
   const [bounds, setBounds] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       ({ coords: { latitude, longitude } }) => {
@@ -19,6 +20,7 @@ export default function Explore(props) {
   }, []);
   useEffect(() => {
     if (bounds) {
+      setIsLoading(true);
       setPlaces([]); //每次刷新地图时，清空places
       getPlacesData(bounds.sw, bounds.ne).then((data) => {
         const xidArr = data.map((item) => item.properties.xid);
@@ -30,9 +32,11 @@ export default function Explore(props) {
           const id = xidArr[i];
 
           getPlaceDetails(id).then((res) => {
+            console.log(res);
             setPlaces((prev) => {
               return [...prev, res];
             }); //在异步请求里面，state更新时，需要用到前一个状态照片,如果直接更新，状态保持不变
+            setIsLoading(false);
           });
         }
       });
@@ -56,6 +60,7 @@ export default function Explore(props) {
           availableTrips={props.curTrips}
           addTrip={props.onAddTrip}
           deleteTrip={props.onDeleteTrip}
+          isLoading={isLoading}
         />
       </Grid>
       <Grid

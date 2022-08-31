@@ -1,7 +1,8 @@
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import Card from "../components/Card";
+
+import Cards from "../components/Cards";
 const defaultActivity = [
   { name: "eat", id: 1 },
   { name: "play", id: 2 },
@@ -19,13 +20,13 @@ export default function Place(props) {
           return (
             <Box key={index}>
               <Link to={`/home/${currentPlace}/${item.name}`}>Go</Link>
-              <Card
+              <Cards
                 key={index}
                 placeName={item.name}
                 placeId={item.id}
                 availableTrips={props.curTrips}
                 addTrip={props.onAddTrip}
-              ></Card>
+              ></Cards>
             </Box>
           );
         })}
