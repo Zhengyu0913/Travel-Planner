@@ -11,6 +11,7 @@ export default function Explore(props) {
   const [coords, setCoords] = useState({});
   const [bounds, setBounds] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [childClicked, setChildClicked] = useState(null);
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       ({ coords: { latitude, longitude } }) => {
@@ -61,6 +62,7 @@ export default function Explore(props) {
           addTrip={props.onAddTrip}
           deleteTrip={props.onDeleteTrip}
           isLoading={isLoading}
+          childClicked={childClicked}
         />
       </Grid>
       <Grid
@@ -73,7 +75,13 @@ export default function Explore(props) {
           alignItems: "center",
         }}
       >
-        <Map setBounds={setBounds} setCoords={setCoords} coords={coords} />
+        <Map
+          setBounds={setBounds}
+          setCoords={setCoords}
+          coords={coords}
+          places={places}
+          setChildClicked={setChildClicked}
+        />
       </Grid>
     </Grid>
   );
