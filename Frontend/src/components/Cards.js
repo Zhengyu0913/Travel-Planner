@@ -23,6 +23,11 @@ import {
 } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 export default function Cards(props) {
+  if (props.selected)
+    props.refProp?.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   const [open, setOpen] = React.useState(false);
   const [openDailyPlan, setOpenDailyPlan] = React.useState(false);
   const [tripName, setTripName] = React.useState("");

@@ -22,7 +22,14 @@ import Cards from "./Cards";
 const List = (props) => {
   const [type, setType] = useState("hotels");
   const [rating, setRating] = useState("");
-
+  const [elRefs, setElRefs] = useState([]);
+  useEffect(() => {
+    setElRefs((refs) =>
+      Array(props.places.length)
+        .fill()
+        .map((_, i) => refs[i] || createRef())
+    );
+  }, [props.places]);
   return (
     <Box
       sx={{
@@ -117,8 +124,10 @@ const List = (props) => {
             }}
           >
             {props.places?.map((place, i) => (
-              <Grid key={i} item xs={12}>
+              <Grid ref={elRefs[i]} key={i} item xs={12}>
                 <Cards
+                  refProp={elRefs[i]}
+                  selected={Number(props.childClicked) === i}
                   placeName={place.name}
                   placeId={place.xid}
                   availableTrips={props.availableTrips}
