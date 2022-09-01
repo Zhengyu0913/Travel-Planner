@@ -55,6 +55,42 @@ const List = ({
       <Typography variant="h4" sx={{ marginBottom: "10px" }}>
         Food & Dining around you
       </Typography>
+      <Box
+        sx={{
+          marginY: "30px",
+        }}
+      >
+        <Autocomplete onPlaceChanged={onPlaceChanged} onLoad={onLoad}>
+          <Paper
+            component="form"
+            sx={{
+              p: "2px 4px",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <IconButton sx={{ p: "10px" }} aria-label="menu">
+              <MenuIcon />
+            </IconButton>
+            <InputBase
+              sx={{ ml: 1, flex: 1 }}
+              placeholder="Search Google Maps"
+              inputProps={{ "aria-label": "search google maps" }}
+            />
+            <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
+              <SearchIcon />
+            </IconButton>
+            <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+            <IconButton
+              color="primary"
+              sx={{ p: "10px" }}
+              aria-label="directions"
+            >
+              <DirectionsIcon />
+            </IconButton>
+          </Paper>
+        </Autocomplete>
+      </Box>
       {isLoading ? (
         <Box
           sx={{
@@ -68,46 +104,6 @@ const List = ({
         </Box>
       ) : (
         <>
-          <Box
-            sx={{
-              marginY: "30px",
-            }}
-          >
-            <Autocomplete onPlaceChanged={onPlaceChanged} onLoad={onLoad}>
-              <Paper
-                component="form"
-                sx={{
-                  p: "2px 4px",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <IconButton sx={{ p: "10px" }} aria-label="menu">
-                  <MenuIcon />
-                </IconButton>
-                <InputBase
-                  sx={{ ml: 1, flex: 1 }}
-                  placeholder="Search Google Maps"
-                  inputProps={{ "aria-label": "search google maps" }}
-                />
-                <IconButton
-                  type="button"
-                  sx={{ p: "10px" }}
-                  aria-label="search"
-                >
-                  <SearchIcon />
-                </IconButton>
-                <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-                <IconButton
-                  color="primary"
-                  sx={{ p: "10px" }}
-                  aria-label="directions"
-                >
-                  <DirectionsIcon />
-                </IconButton>
-              </Paper>
-            </Autocomplete>
-          </Box>
           <Stack direction="row" spacing={2} sx={{ marginY: "30px" }}>
             <FormControl fullWidth variant="standard">
               <InputLabel id="demo-simple-select-label">Type</InputLabel>

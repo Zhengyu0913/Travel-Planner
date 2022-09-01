@@ -14,7 +14,6 @@ import DateSelect from "./DateSelect";
 import TimeSelect from "./TimeSelect";
 import { getAllDate } from "./utils/getAllDate";
 import {
-  Box,
   Card,
   CardActions,
   CardContent,
@@ -120,6 +119,7 @@ export default function Cards(props) {
                 alignItems: "center",
                 justifyContent: "space-between",
               }}
+              component="div"
             >
               <LocationOnIcon />
               <Typography gutterBottom variant="body2" color="textSecondary">
