@@ -24,7 +24,6 @@ const Map = (props) => {
         onChildClick={(child) => props.setChildClicked(child)}
       >
         {props.places.map((place, index) => {
-          console.log(Number(place.point.lon), Number(place.point.lat));
           return (
             <div
               lat={Number(place.point.lat)}
@@ -56,6 +55,7 @@ const Map = (props) => {
                     style={{
                       cursor: "pointer",
                     }}
+                    alt="travel_planner"
                   />
                 </Paper>
               )}
