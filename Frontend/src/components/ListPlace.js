@@ -3,6 +3,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import {
   Box,
   CircularProgress,
+  Divider,
   FormControl,
   Grid,
   IconButton,
@@ -14,22 +15,37 @@ import {
   Typography,
 } from "@mui/material";
 import { Stack } from "@mui/system";
-import PlaceDetails from "./PlaceDetails";
-import { Autocomplete } from "@react-google-maps/api";
-import Card from "./Cards";
-import Cards from "./Cards";
 
-const List = (props) => {
-  const [type, setType] = useState("hotels");
+import { Autocomplete } from "@react-google-maps/api";
+
+import Cards from "./Cards";
+import MenuIcon from "@mui/icons-material/Menu";
+
+import DirectionsIcon from "@mui/icons-material/Directions";
+const List = ({
+  type,
+  places,
+  onPlaceChanged,
+  onLoad,
+  setPlaces,
+  availableTrips,
+  addTrip,
+  deleteTrip,
+  isLoading,
+  childClicked,
+  setType,
+}) => {
   const [rating, setRating] = useState("");
   const [elRefs, setElRefs] = useState([]);
+
   useEffect(() => {
     setElRefs((refs) =>
-      Array(props.places.length)
+      Array(places.length)
         .fill()
         .map((_, i) => refs[i] || createRef())
     );
-  }, [props.places]);
+  }, [places]);
+
   return (
     <Box
       sx={{
@@ -39,7 +55,7 @@ const List = (props) => {
       <Typography variant="h4" sx={{ marginBottom: "10px" }}>
         Food & Dining around you
       </Typography>
-      {props.isLoading ? (
+      {isLoading ? (
         <Box
           sx={{
             height: "600px",
@@ -57,30 +73,38 @@ const List = (props) => {
               marginY: "30px",
             }}
           >
-            <Autocomplete
-              onPlaceChanged={props.onPlaceChanged}
-              onLoad={props.onLoad}
-            >
+            <Autocomplete onPlaceChanged={onPlaceChanged} onLoad={onLoad}>
               <Paper
                 component="form"
                 sx={{
                   p: "2px 4px",
                   display: "flex",
                   alignItems: "center",
-                  width: { xs: 200, md: 400 },
-                  border: "1px solid #ccc",
-                  borderRadius: 20,
                 }}
               >
-                <Box>
-                  <IconButton sx={{ p: "10px" }}>
-                    <SearchIcon />
-                  </IconButton>
-                </Box>
+                <IconButton sx={{ p: "10px" }} aria-label="menu">
+                  <MenuIcon />
+                </IconButton>
                 <InputBase
                   sx={{ ml: 1, flex: 1 }}
-                  placeholder="Search place or activities"
+                  placeholder="Search Google Maps"
+                  inputProps={{ "aria-label": "search google maps" }}
                 />
+                <IconButton
+                  type="button"
+                  sx={{ p: "10px" }}
+                  aria-label="search"
+                >
+                  <SearchIcon />
+                </IconButton>
+                <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+                <IconButton
+                  color="primary"
+                  sx={{ p: "10px" }}
+                  aria-label="directions"
+                >
+                  <DirectionsIcon />
+                </IconButton>
               </Paper>
             </Autocomplete>
           </Box>
@@ -94,9 +118,10 @@ const List = (props) => {
                 label="Date"
                 onChange={(e) => setType(e.target.value)}
               >
-                <MenuItem value="restaurants">Restaurants</MenuItem>
-                <MenuItem value="hotels">Hotels</MenuItem>
-                <MenuItem value="attractions">Attractions</MenuItem>
+                <MenuItem value={0}>All</MenuItem>
+                <MenuItem value="foods">Restaurants</MenuItem>
+                <MenuItem value="accomodations">Hotels</MenuItem>
+                <MenuItem value="interesting_places">Attractions</MenuItem>
               </Select>
             </FormControl>
             <FormControl fullWidth variant="standard">
@@ -123,16 +148,16 @@ const List = (props) => {
               overflow: "auto",
             }}
           >
-            {props.places?.map((place, i) => (
+            {places?.map((place, i) => (
               <Grid ref={elRefs[i]} key={i} item xs={12}>
                 <Cards
                   refProp={elRefs[i]}
-                  selected={Number(props.childClicked) === i}
+                  selected={Number(childClicked) === i}
                   placeName={place.name}
                   placeId={place.xid}
-                  availableTrips={props.availableTrips}
-                  addTrip={props.addTrip}
-                  deleteTrip={props.deleteTrip}
+                  availableTrips={availableTrips}
+                  addTrip={addTrip}
+                  deleteTrip={deleteTrip}
                   img={
                     place.preview
                       ? place.preview.source

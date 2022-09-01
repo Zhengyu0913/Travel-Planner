@@ -7,7 +7,7 @@ export const getPlaceDetails = async (xid) => {
       {
         headers: {
           "X-RapidAPI-Key":
-            "49f126bbc9msh190389345e39f94p169545jsn16d38e4e9344",
+            "3eccf13250mshdcbf6acba8322dcp17bdd8jsnf6985f9bb63a",
           "X-RapidAPI-Host": "opentripmap-places-v1.p.rapidapi.com",
         },
       }
