@@ -24,16 +24,6 @@ function SearchBar(props) {
                 onSearch={handleSearch}
             />
             <p className="error-msg">{error}</p>
-
-            {/*<Radio.Group*/}
-            {/*    onChange={changeSearchType}*/}
-            {/*    value={searchType}*/}
-            {/*    className="search-type-group"*/}
-            {/*>*/}
-            {/*    <Radio value={SEARCH_KEY.all}>All</Radio>*/}
-            {/*    <Radio value={SEARCH_KEY.keyword}>Keyword</Radio>*/}
-            {/*    <Radio value={SEARCH_KEY.user}>User</Radio>*/}
-            {/*</Radio.Group>*/}
         </div>
     );
 }

@@ -9,6 +9,26 @@ export default function HeaderRight() {
   return (
     <div>
       <Button
+        href="/explore"
+        disableRipple
+        variant="text"
+        sx={{
+          "&:hover": {
+            backgroundColor: "#D5D5D5",
+            boxShadow: "none",
+          },
+        }}
+        onClick={clickHandler}
+      >
+        <Typography
+          color="#010101"
+          component={"div"}
+          sx={{ textTransform: "capitalize", fontWeight: "bold" }}
+        >
+          Explore
+        </Typography>
+      </Button>
+      <Button
         href="/trips"
         disableRipple
         variant="text"

@@ -1,28 +1,35 @@
-import React from "react";
+import { Box } from "@mui/system";
+import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-export default function Place() {
+import Cards from "../components/Cards";
+const defaultActivity = [
+  { name: "eat", id: 1 },
+  { name: "play", id: 2 },
+  { name: "stay", id: 3 },
+];
+export default function Place(props) {
+  const [places, setPlaces] = useState(defaultActivity); //在useEffect里面使用setPlaces
   const param = useParams();
   const currentPlace = param.place;
   return (
     <>
       <div>Place:{currentPlace}</div>
       <ul>
-        <Link to={`/home/${currentPlace}/${1}`}>
-          <li>1</li>
-        </Link>
-        <Link to={`/home/${currentPlace}/${2}`}>
-          <li>2</li>
-        </Link>
-        <Link to={`/home/${currentPlace}/${3}`}>
-          <li>3</li>
-        </Link>
-        <Link to={`/home/${currentPlace}/${4}`}>
-          <li>4</li>
-        </Link>
-        <Link to={`/home/${currentPlace}/${5}`}>
-          <li>5</li>
-        </Link>
+        {places.map((item, index) => {
+          return (
+            <Box key={index}>
+              <Link to={`/home/${currentPlace}/${item.name}`}>Go</Link>
+              <Cards
+                key={index}
+                placeName={item.name}
+                placeId={item.id}
+                availableTrips={props.curTrips}
+                addTrip={props.onAddTrip}
+              ></Cards>
+            </Box>
+          );
+        })}
       </ul>
     </>
   );
