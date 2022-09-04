@@ -1,4 +1,4 @@
-package com.travalplanner.backend.entity;
+package com.travelplanner.backend.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
