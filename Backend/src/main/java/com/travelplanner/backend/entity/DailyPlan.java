@@ -20,7 +20,7 @@ public class DailyPlan implements Serializable {
     @Id
     @Column(name = "daily_plan_id")
     @JsonProperty("daily_plan_id")
-    private String dailyPlanId;
+    private int dailyPlanId;
 
     @Column(name = "daily_plan_date")
     @JsonProperty("daily_plan_date")

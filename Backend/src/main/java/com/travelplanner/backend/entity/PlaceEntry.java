@@ -17,7 +17,7 @@ public class PlaceEntry implements Serializable {
     @Id
     @Column(name = "place_entry_id")
     @JsonProperty("place_entry_id")
-    private String placeEntryId;
+    private int placeEntryId;
 
     @Column(name = "g_place_id")
     @JsonProperty("g_place_id")
