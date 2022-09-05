@@ -13,9 +13,9 @@ public class SignInService {
     @Autowired
     private SignInDao signInDao;
 
-    public String verifyLogin(String userId, String password) throws IOException {
-        password = Util.encryptPassword(userId, password);
-        return signInDao.verifyLogin(userId, password);
+    public String verifyLogin(String email, String password) throws IOException {
+        password = Util.encryptPassword(email, password);
+        return signInDao.verifyLogin(email, password);
     }
 }
 

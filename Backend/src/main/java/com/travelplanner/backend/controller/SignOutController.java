@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class SignOutController {
 
-    @RequestMapping(value = "/signOut", method = RequestMethod.POST)
+    @RequestMapping(value = "/signout", method = RequestMethod.POST)
     public void signOut(HttpServletRequest request, HttpServletResponse response
     ) {
         HttpSession session = request.getSession(false);

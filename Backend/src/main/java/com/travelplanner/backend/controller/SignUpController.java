@@ -17,7 +17,7 @@ public class SignUpController {
     @Autowired
     private SignUpService signUpService;
 
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public void register(@RequestBody User user, HttpServletResponse response) throws IOException {
         if (!signUpService.signUp(user)) {
             response.setStatus(HttpServletResponse.SC_CONFLICT);

@@ -4,17 +4,17 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class SignInRequestBody {
-    private final String userId;
+    private final String email;
     private final String password;
 
     @JsonCreator
-    public SignInRequestBody(@JsonProperty("user_id") String userId, @JsonProperty("password") String password) {
-        this.userId = userId;
+    public SignInRequestBody(@JsonProperty("email") String email, @JsonProperty("password") String password) {
+        this.email = email;
         this.password = password;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getEmail() {
+        return email;
     }
 
     public String getPassword() {

@@ -3,19 +3,19 @@ package com.travelplanner.backend.response;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class SignInResponseBody {
-    @JsonProperty("user_id")
-    private final String userId;
+    @JsonProperty("email")
+    private final String email;
 
     @JsonProperty("name")
     private final String name;
 
-    public SignInResponseBody(String userId, String name) {
-        this.userId = userId;
+    public SignInResponseBody(String email, String name) {
+        this.email = email;
         this.name = name;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getEmail() {
+        return email;
     }
 
     public String getName() {

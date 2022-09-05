@@ -19,20 +19,20 @@ import java.io.IOException;
 public class SignInController {
 
     @Autowired
-    private SignInService loginService;
+    private SignInService signInService;
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @RequestMapping(value = "/signin", method = RequestMethod.POST)
     public void login(@RequestBody SignInRequestBody requestBody, HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String firstname = loginService.verifyLogin(requestBody.getUserId(), requestBody.getPassword());
+        String firstname = signInService.verifyLogin(requestBody.getEmail(), requestBody.getPassword());
 
-        // Create a new session for the user if user ID and password are correct, otherwise return Unauthorized error.
+        // Create a new session for the user if user email and password are correct, otherwise return Unauthorized error.
         if (!firstname.isEmpty()) {
-            // Create a new session, put user ID as an attribute into the session object, and set the expiration time to 600 seconds.
+            // Create a new session, put user email as an attribute into the session object, and set the expiration time to 600 seconds.
             HttpSession session = request.getSession();
-            session.setAttribute("user_id", requestBody.getUserId());
+            session.setAttribute("email", requestBody.getEmail());
             session.setMaxInactiveInterval(600);
 
-            SignInResponseBody loginResponseBody = new SignInResponseBody(requestBody.getUserId(), firstname);
+            SignInResponseBody loginResponseBody = new SignInResponseBody(requestBody.getEmail(), firstname);
             response.setContentType("application/json;charset=UTF-8");
             response.getWriter().print(new ObjectMapper().writeValueAsString(loginResponseBody));
         } else {
