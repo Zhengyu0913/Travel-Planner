@@ -20,7 +20,7 @@ public class Trip implements Serializable {
     @Id
     @Column(name = "trip_id")
     @JsonProperty("trip_id")
-    private String tripId;
+    private int tripId;
 
     @Column(name = "trip_name")
     @JsonProperty("trip_name")

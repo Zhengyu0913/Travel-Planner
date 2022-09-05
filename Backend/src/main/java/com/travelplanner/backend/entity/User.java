@@ -19,7 +19,7 @@ public class User implements Serializable {
     @Id
     @Column(name = "user_id")
     @JsonProperty("user_id")
-    private String userId;
+    private int userId;
 
     @Column(name = "email")
     @JsonProperty("email")
