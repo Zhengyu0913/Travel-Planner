@@ -16,7 +16,6 @@ public class SignInDao {
     public String verifyLogin(String userId, String password) {
         String name = "";
 
-//https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html
         try (Session session = sessionFactory.openSession()) {
             User user = session.get(User.class, userId);
             if(user != null && user.getPassword().equals((password))) {

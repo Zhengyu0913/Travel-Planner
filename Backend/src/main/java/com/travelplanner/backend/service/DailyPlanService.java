@@ -7,11 +7,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class DailyPlanService {
-
-    @Autowired
-    private DailyPlanDAO dailyPlanDAO;
-
-    public DailyPlan getDailyPlan(int dailyplanId) {
-        return dailyPlanDAO.getDailyPlan(dailyplanId);
-    }
+//
+//    @Autowired
+//    private DailyPlanDAO dailyPlanDAO;
+//
+//    public DailyPlan getDailyPlan(int dailyplanId) {
+//        return dailyPlanDAO.getDailyPlan(dailyplanId);
+//    }
 }

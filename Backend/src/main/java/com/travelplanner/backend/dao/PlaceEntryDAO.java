@@ -5,7 +5,6 @@ import com.travelplanner.backend.entity.PlaceEntry;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Repository;
 
 @Repository

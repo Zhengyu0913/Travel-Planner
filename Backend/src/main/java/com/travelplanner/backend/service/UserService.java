@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-    @Autowired
-    UserDAO userDAO;
-
-    public User getUser(String email) {
-        return userDAO.getUser(email);
-    }
+//    @Autowired
+//    UserDAO userDAO;
+//
+//    public User getUser(String email) {
+//        return userDAO.getUser(email);
+//    }
 }

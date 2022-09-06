@@ -30,7 +30,7 @@ public class PlaceEntryController {
     @RequestMapping(value = "/delete/placeentry/{placeentryId}", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
     @ResponseBody
-    public void delete(@PathVariable("placeentryId") int placeentryId) {
+    public void deletePlaceEntry(@PathVariable("placeentryId") int placeentryId) {
         placeEntryService.deletePlaceEntry(placeentryId);
     }
 }

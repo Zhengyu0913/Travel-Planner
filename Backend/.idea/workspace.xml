@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Backend:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f8a56ac2-33ca-499c-b3d5-f0b6868d0e9c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Backend.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_15.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/travelplanner/backend/HelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/travelplanner/backend/HelloServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/travelplanner/backend/controller/PlaceEntryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/travelplanner/backend/controller/PlaceEntryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/travelplanner/backend/controller/SignOutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/travelplanner/backend/controller/SignOutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/travelplanner/backend/dao/PlaceEntryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/travelplanner/backend/dao/PlaceEntryDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/travelplanner/backend/dao/SignInDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/travelplanner/backend/dao/SignInDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/travelplanner/backend/service/DailyPlanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/travelplanner/backend/service/DailyPlanService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/travelplanner/backend/service/PlaceEntryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/travelplanner/backend/service/PlaceEntryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/travelplanner/backend/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/travelplanner/backend/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/WEB-INF/classes/META-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/WEB-INF/classes/com/travelplanner/backend/HelloServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/WEB-INF/classes/com/travelplanner/backend/HelloServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/WEB-INF/classes/com/travelplanner/backend/controller/PlaceEntryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/WEB-INF/classes/com/travelplanner/backend/controller/PlaceEntryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/WEB-INF/classes/com/travelplanner/backend/controller/SignOutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/WEB-INF/classes/com/travelplanner/backend/controller/SignOutController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/WEB-INF/classes/com/travelplanner/backend/dao/PlaceEntryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/WEB-INF/classes/com/travelplanner/backend/dao/PlaceEntryDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/WEB-INF/classes/com/travelplanner/backend/entity/DailyPlan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/WEB-INF/classes/com/travelplanner/backend/entity/DailyPlan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/WEB-INF/classes/com/travelplanner/backend/entity/Trip.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/WEB-INF/classes/com/travelplanner/backend/entity/Trip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/WEB-INF/classes/com/travelplanner/backend/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/WEB-INF/classes/com/travelplanner/backend/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/WEB-INF/classes/com/travelplanner/backend/service/DailyPlanService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/WEB-INF/classes/com/travelplanner/backend/service/DailyPlanService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/WEB-INF/classes/com/travelplanner/backend/service/PlaceEntryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/WEB-INF/classes/com/travelplanner/backend/service/PlaceEntryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/WEB-INF/classes/com/travelplanner/backend/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/WEB-INF/classes/com/travelplanner/backend/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/WEB-INF/classes/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/Backend-1.0-SNAPSHOT/WEB-INF/classes/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/travelplanner/backend/HelloServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/travelplanner/backend/HelloServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/travelplanner/backend/controller/PlaceEntryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/travelplanner/backend/controller/PlaceEntryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/travelplanner/backend/controller/SignOutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/travelplanner/backend/controller/SignOutController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/travelplanner/backend/dao/PlaceEntryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/travelplanner/backend/dao/PlaceEntryDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/travelplanner/backend/entity/DailyPlan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/travelplanner/backend/entity/DailyPlan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/travelplanner/backend/entity/Trip.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/travelplanner/backend/entity/Trip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/travelplanner/backend/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/travelplanner/backend/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/travelplanner/backend/service/DailyPlanService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/travelplanner/backend/service/DailyPlanService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/travelplanner/backend/service/PlaceEntryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/travelplanner/backend/service/PlaceEntryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/travelplanner/backend/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/travelplanner/backend/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2EPEGPmvTCdOpEvI4z2kwCGP7h6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yangm\Desktop\TravelPlannar\Backend\src\main\resources" />
+      <recent name="C:\Users\yangm\Desktop\TravelPlannar\Backend\src\main\java\com\tarvelplanner\backend" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.tarvelplanner.backend.util" />
+      <recent name="com.tarvelplanner.backend.response" />
+      <recent name="com.tarvelplanner.backend.request" />
+      <recent name="com.tarvelplanner.backend" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.60" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.60" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="Backend:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="0a84b202-fea1-476b-a7cc-fc37b3d317ed" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="6416" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Backend:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f8a56ac2-33ca-499c-b3d5-f0b6868d0e9c" name="Changes" comment="" />
+      <created>1662488726154</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662488726154</updated>
+      <workItem from="1662488730512" duration="3994000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
