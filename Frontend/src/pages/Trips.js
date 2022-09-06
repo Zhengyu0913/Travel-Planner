@@ -11,6 +11,7 @@ import { getAllDate } from "../components/utils/getAllDate";
 import { Stack } from "@mui/system";
 import DatePickerFrom from "../components/DatePickerFrom";
 import DatePickerTo from "../components/DatePickerTo";
+import { addTripToBackend } from "../components/utils/addTripToBackend";
 
 export default function Trips(props) {
   const [open, setOpen] = useState(false);
@@ -38,7 +39,23 @@ export default function Trips(props) {
     const dateArr = getAllDate(tripFrom, tripTo);
     console.log(props.onAddTrip);
     props.onAddTrip({ name: tripName, date: dateArr });
-
+    // addTripToBackend({ name: tripName, date: dateArr })
+    //   .then((res) => {
+    //     if (res.ok) {
+    //       return res.json();
+    //     } else {
+    //       return res.json().then((data) => {
+    //         let errorMessage = "Add trip failed!";
+    //         throw new Error(errorMessage);
+    //       });
+    //     }
+    //   })
+    //   .then((data) => {
+    //     console.log(data);
+    //   })
+    //   .catch((err) => {
+    //     alert(err.message);
+    //   });
     console.log(JSON.stringify({ name: tripName, date: dateArr })); //发送给后端
     setOpen(false);
   };
@@ -80,7 +97,7 @@ export default function Trips(props) {
       <ul>
         {props.curTrips?.map((item, index) => {
           return (
-            <Link to={`/trips/${item.name}`} key={index}>
+            <Link to={`/trips/${item.id}`} key={index}>
               <li>{item.name}</li>
             </Link>
           );
