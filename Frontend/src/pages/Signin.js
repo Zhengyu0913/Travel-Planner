@@ -22,6 +22,7 @@ import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { AuthContext } from "../context/auth-context";
+import { Paper } from "@mui/material";
 
 function Copyright(props) {
   return (
@@ -84,35 +85,25 @@ export default function SignIn() {
       return;
     }
 
-    // console.log({
-    //   email: emailInput,
-
-    //   password: passwordInput,
-    // });
-    fetch(
-      "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDXaLa6CbxBKo3owWVxbQQbtEeoxHl2DYw",
-      {
-        method: "POST",
-        body: JSON.stringify({
-          email: emailInput,
-          password: passwordInput,
-          returnSecureToken: true,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
+    fetch("/api/signin", {
+      method: "POST",
+      body: JSON.stringify({
+        email: emailInput,
+        password: passwordInput,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((res) => {
         if (res.ok) {
           return res.json();
         } else {
           return res.json().then((data) => {
             let errorMessage = "Authentication failed!";
-            // if (data && data.error && data.error.message) {
-            //   errorMessage = data.error.message;
-            // }
-
+            if (data && data.error && data.error.message) {
+              errorMessage = data.error.message;
+            }
             throw new Error(errorMessage);
           });
         }
@@ -143,95 +134,108 @@ export default function SignIn() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <Box
+      <Container
+        sx={{ display: "flex", justifyContent: "center", marginTop: 3 }}
+      >
+        <Paper
           sx={{
-            marginTop: 8,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
+            width: { xs: 200, md: 400 },
+
+            borderRadius: 5,
+
+            paddingX: "12px",
           }}
+          elevation={3}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h4">
-            Sign In
-          </Typography>
+          <CssBaseline />
           <Box
-            component="form"
-            noValidate
-            onSubmit={handleSubmit}
-            sx={{ mt: 3 }}
+            sx={{
+              marginTop: 3,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
           >
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                  onChange={emailChangeHandler}
-                  onBlur={emailBlurHandler}
-                  error={emailIsInValid}
-                  value={emailInput}
-                />
-              </Grid>
-
-              <Grid item xs={12}>
-                <FormControl fullWidth required>
-                  <InputLabel htmlFor="outlined-adornment-password">
-                    Password
-                  </InputLabel>
-                  <OutlinedInput
-                    id="outlined-adornment-password"
-                    name="outlined-adornment-password"
-                    autoComplete="new-password"
-                    type={showPassword ? "text" : "password"}
-                    value={passwordInput}
-                    onChange={passwordChangeHandler}
-                    onBlur={passwordBlurHandler}
-                    error={passwordInputIsInValid}
-                    endAdornment={
-                      <InputAdornment position="end">
-                        <IconButton
-                          aria-label="toggle password visibility"
-                          onClick={handleClickShowPassword}
-                          onMouseDown={handleMouseDownPassword}
-                          edge="end"
-                        >
-                          {showPassword ? <VisibilityOff /> : <Visibility />}
-                        </IconButton>
-                      </InputAdornment>
-                    }
-                    label="Password"
-                  />
-                </FormControl>
-              </Grid>
-            </Grid>
-
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
+            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography component="h1" variant="h4">
               Sign In
-            </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link component={RouterLink} to="/signup" variant="body2">
-                  Don't have an account? Sign Up
-                </Link>
-              </Grid>
-            </Grid>
-          </Box>
-        </Box>
+            </Typography>
+            <Box
+              component="form"
+              noValidate
+              onSubmit={handleSubmit}
+              sx={{ mt: 3 }}
+            >
+              <Grid container spacing={2}>
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    id="email"
+                    label="Email Address"
+                    name="email"
+                    autoComplete="email"
+                    onChange={emailChangeHandler}
+                    onBlur={emailBlurHandler}
+                    error={emailIsInValid}
+                    value={emailInput}
+                  />
+                </Grid>
 
-        <Copyright sx={{ mt: 5 }} />
+                <Grid item xs={12}>
+                  <FormControl fullWidth required>
+                    <InputLabel htmlFor="outlined-adornment-password">
+                      Password
+                    </InputLabel>
+                    <OutlinedInput
+                      id="outlined-adornment-password"
+                      name="outlined-adornment-password"
+                      autoComplete="new-password"
+                      type={showPassword ? "text" : "password"}
+                      value={passwordInput}
+                      onChange={passwordChangeHandler}
+                      onBlur={passwordBlurHandler}
+                      error={passwordInputIsInValid}
+                      endAdornment={
+                        <InputAdornment position="end">
+                          <IconButton
+                            aria-label="toggle password visibility"
+                            onClick={handleClickShowPassword}
+                            onMouseDown={handleMouseDownPassword}
+                            edge="end"
+                          >
+                            {showPassword ? <VisibilityOff /> : <Visibility />}
+                          </IconButton>
+                        </InputAdornment>
+                      }
+                      label="Password"
+                    />
+                  </FormControl>
+                </Grid>
+              </Grid>
+
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                Sign In
+              </Button>
+              <Grid container justifyContent="flex-end">
+                <Grid item>
+                  <Link component={RouterLink} to="/signup" variant="body2">
+                    Don't have an account? Sign Up
+                  </Link>
+                </Grid>
+              </Grid>
+            </Box>
+          </Box>
+
+          <Copyright sx={{ mt: 5 }} />
+        </Paper>
       </Container>
     </ThemeProvider>
   );
