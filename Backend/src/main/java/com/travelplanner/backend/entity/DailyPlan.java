@@ -6,9 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name = "Daily_Plans")
@@ -38,14 +38,14 @@ public class DailyPlan implements Serializable {
     }
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy="dailyPlan")
-    Set<PlaceEntry> placeEntrySet = new HashSet<>();
+    List<PlaceEntry> placeEntryList = new ArrayList<>();
 
-    public Set<PlaceEntry> getPlaceEntrySet() {
-        return placeEntrySet;
+    public List<PlaceEntry> getPlaceEntrySet() {
+        return placeEntryList;
     }
 
-    public void setPlaceEntrySet(Set<PlaceEntry> placeEntrySet) {
-        this.placeEntrySet = placeEntrySet;
+    public void setPlaceEntryList(List<PlaceEntry> placeEntryList) {
+        this.placeEntryList = placeEntryList;
     }
 
     public int getDailyPlanId() {
