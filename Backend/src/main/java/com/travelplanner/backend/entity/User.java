@@ -48,11 +48,11 @@ public class User implements Serializable {
         this.tripSet = tripSet;
     }
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 

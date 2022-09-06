@@ -40,7 +40,7 @@ public class DailyPlan implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy="dailyPlan")
     Set<PlaceEntry> placeEntrySet = new HashSet<>();
 
-    public Set<PlaceEntry> getDailyPlanSet() {
+    public Set<PlaceEntry> getPlaceEntrySet() {
         return placeEntrySet;
     }
 
@@ -48,11 +48,11 @@ public class DailyPlan implements Serializable {
         this.placeEntrySet = placeEntrySet;
     }
 
-    public String getDailyPlanId() {
+    public int getDailyPlanId() {
         return dailyPlanId;
     }
 
-    public void setDailyPlanId(String dailyPlanId) {
+    public void setDailyPlanId(int dailyPlanId) {
         this.dailyPlanId = dailyPlanId;
     }
 
