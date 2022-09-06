@@ -56,11 +56,11 @@ public class Trip implements Serializable {
         this.dailyPlanSet = dailyPlanSet;
     }
 
-    public String getTripId() {
+    public int getTripId() {
         return tripId;
     }
 
-    public void setTripId(String tripId) {
+    public void setTripId(int tripId) {
         this.tripId = tripId;
     }
 

@@ -38,11 +38,11 @@ public class PlaceEntry implements Serializable {
         this.dailyPlan = dailyPlan;
     }
 
-    public String getPlaceEntryId() {
+    public int getPlaceEntryId() {
         return placeEntryId;
     }
 
-    public void setPlaceEntryId(String placeEntryId) {
+    public void setPlaceEntryId(int placeEntryId) {
         this.placeEntryId = placeEntryId;
     }
 

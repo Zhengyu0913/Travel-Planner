@@ -15,7 +15,7 @@ public class SignUpService {
     private SignUpDao signUpDao;
 
     public boolean signUp(User user) throws IOException {
-        user.setPassword(Util.encryptPassword(user.getUserId(), user.getPassword()));
+        user.setPassword(Util.encryptPassword(user.getEmail(), user.getPassword()));
         return signUpDao.signUp(user);
     }
 }
