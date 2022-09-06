@@ -19,7 +19,7 @@ public class User implements Serializable {
     @Id
     @Column(name = "user_id")
     @JsonProperty("user_id")
-    private String userId;
+    private int userId;
 
     @Column(name = "email")
     @JsonProperty("email")
@@ -48,11 +48,11 @@ public class User implements Serializable {
         this.tripSet = tripSet;
     }
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 

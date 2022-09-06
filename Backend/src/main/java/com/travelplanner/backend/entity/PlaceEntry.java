@@ -17,7 +17,7 @@ public class PlaceEntry implements Serializable {
     @Id
     @Column(name = "place_entry_id")
     @JsonProperty("place_entry_id")
-    private String placeEntryId;
+    private int placeEntryId;
 
     @Column(name = "g_place_id")
     @JsonProperty("g_place_id")
@@ -38,11 +38,11 @@ public class PlaceEntry implements Serializable {
         this.dailyPlan = dailyPlan;
     }
 
-    public String getPlaceEntryId() {
+    public int getPlaceEntryId() {
         return placeEntryId;
     }
 
-    public void setPlaceEntryId(String placeEntryId) {
+    public void setPlaceEntryId(int placeEntryId) {
         this.placeEntryId = placeEntryId;
     }
 
@@ -54,14 +54,8 @@ public class PlaceEntry implements Serializable {
         this.gPlaceId = gPlaceId;
     }
 
-    public Timeblock getTimeblock() {
+    public Timeblock getTimeblock() { return timeblock; }
 
-        return timeblock;
-    }
-
-    public void setTimeblock(Timeblock timeblock) {
-
-        this.timeblock= timeblock;
-    }
+    public void setTimeblock(Timeblock timeblock) { this.timeblock= timeblock; }
 
 }

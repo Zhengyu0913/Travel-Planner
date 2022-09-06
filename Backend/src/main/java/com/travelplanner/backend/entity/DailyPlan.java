@@ -20,7 +20,7 @@ public class DailyPlan implements Serializable {
     @Id
     @Column(name = "daily_plan_id")
     @JsonProperty("daily_plan_id")
-    private String dailyPlanId;
+    private int dailyPlanId;
 
     @Column(name = "daily_plan_date")
     @JsonProperty("daily_plan_date")
@@ -40,19 +40,17 @@ public class DailyPlan implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy="dailyPlan")
     Set<PlaceEntry> placeEntrySet = new HashSet<>();
 
-    public Set<PlaceEntry> getDailyPlanSet() {
-        return placeEntrySet;
-    }
+    public Set<PlaceEntry> getPlaceEntrySet() { return placeEntrySet; }
 
     public void setPlaceEntrySet(Set<PlaceEntry> placeEntrySet) {
         this.placeEntrySet = placeEntrySet;
     }
 
-    public String getDailyPlanId() {
+    public int getDailyPlanId() {
         return dailyPlanId;
     }
 
-    public void setDailyPlanId(String dailyPlanId) {
+    public void setDailyPlanId(int dailyPlanId) {
         this.dailyPlanId = dailyPlanId;
     }
 

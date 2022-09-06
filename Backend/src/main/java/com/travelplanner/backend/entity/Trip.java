@@ -20,7 +20,7 @@ public class Trip implements Serializable {
     @Id
     @Column(name = "trip_id")
     @JsonProperty("trip_id")
-    private String tripId;
+    private int tripId;
 
     @Column(name = "trip_name")
     @JsonProperty("trip_name")
@@ -56,11 +56,11 @@ public class Trip implements Serializable {
         this.dailyPlanSet = dailyPlanSet;
     }
 
-    public String getTripId() {
+    public int getTripId() {
         return tripId;
     }
 
-    public void setTripId(String tripId) {
+    public void setTripId(int tripId) {
         this.tripId = tripId;
     }
 
