@@ -12,6 +12,7 @@ import { Stack } from "@mui/system";
 import DatePickerFrom from "../components/DatePickerFrom";
 import DatePickerTo from "../components/DatePickerTo";
 import { addTripToBackend } from "../components/utils/addTripToBackend";
+import TripCards from "../components/TripCards";
 
 export default function Trips(props) {
   const [open, setOpen] = useState(false);
@@ -103,6 +104,7 @@ export default function Trips(props) {
           );
         })}
       </ul>
+      <TripCards></TripCards>
     </>
   );
 }
