@@ -19,9 +19,9 @@ public class PlaceEntry implements Serializable {
     @JsonProperty("place_entry_id")
     private int placeEntryId;
 
-    @Column(name = "g_place_id")
-    @JsonProperty("g_place_id")
-    private String gPlaceId;
+    @Column(name = "rapid_place_id")
+    @JsonProperty("rapid_place_id")
+    private String rapidPlaceId;
 
     @Enumerated(value = EnumType.STRING)
     @JsonProperty("timeblock")
@@ -46,12 +46,12 @@ public class PlaceEntry implements Serializable {
         this.placeEntryId = placeEntryId;
     }
 
-    public String getGPlaceId() {
-        return gPlaceId;
+    public String getRapidPlaceId() {
+        return rapidPlaceId;
     }
 
-    public void setGPlaceId(String gPlaceId) {
-        this.gPlaceId = gPlaceId;
+    public void setRapidPlaceId(String rapidPlaceId) {
+        this.rapidPlaceId = rapidPlaceId;
     }
 
     public Timeblock getTimeblock() {
