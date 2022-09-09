@@ -39,8 +39,19 @@
       <workItem from="1662151383982" duration="12000" />
       <workItem from="1662672215093" duration="320000" />
       <workItem from="1662672540736" duration="1389000" />
-      <workItem from="1662692593394" duration="4007000" />
+      <workItem from="1662692593394" duration="6632000" />
+      <workItem from="1662748295858" duration="4440000" />
+      <workItem from="1662753024177" duration="2256000" />
+      <workItem from="1662755448076" duration="4439000" />
     </task>
+    <task id="LOCAL-00001" summary="Add Trip Card in trips page.&#10;Todo: detailed see in the page">
+      <created>1662696629685</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1662696629685</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

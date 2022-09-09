@@ -4,6 +4,9 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
+import {Link} from "react-router-dom";
+import Box from '@mui/material/Box';
+import {Button} from "@mui/material";
 
 const Img = styled('img')({
   margin: 'auto',
@@ -13,7 +16,9 @@ const Img = styled('img')({
 });
 
 export default function TripCards(props) {
+
   return (
+
     <Paper
       sx={{
         p: 2,
@@ -24,10 +29,20 @@ export default function TripCards(props) {
           theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
       }}
     >
+        <Box
+            key={props.curItem.id}
+            sx={{
+                textDecoration: "none",
+                underline: "none",
+                boxShadow: "none",
+            }}
+            component={Link}
+           to={`/trips/${props.curItem.id}`}
+        >
       <Grid container spacing={2}>
         <Grid item>
           <ButtonBase sx={{ width: 128, height: 128 }}>
-            Todo: image for city
+
             <Img alt="complex" src="https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg" />
           </ButtonBase>
         </Grid>
@@ -41,14 +56,18 @@ export default function TripCards(props) {
                 {props.curItem.date[0]+' To ' +props.curItem.date[props.curItem.date.length-1] }
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                {props.curItem.id}
+               ID: {props.curItem.id}
               </Typography>
             </Grid>
             <Grid item>
-              <Typography sx={{ cursor: 'pointer' }} variant="body2">
-                 Remove
-                todo: add eventListener
-              </Typography>
+              {/*<Typography sx={{ cursor: 'pointer' }} variant="body2">*/}
+              {/*   Remove*/}
+              {/*  todo: add eventListener*/}
+              {/*</Typography>*/}
+                <Button onClick={()=> props.deleteItem(props.curItem.id)
+                }>
+                    Remove
+                </Button>
             </Grid>
           </Grid>
           <Grid item>
@@ -58,6 +77,8 @@ export default function TripCards(props) {
           </Grid>
         </Grid>
       </Grid>
+        </Box>
     </Paper>
+
   );
 }

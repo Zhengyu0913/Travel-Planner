@@ -13,12 +13,16 @@ import DatePickerFrom from "../components/DatePickerFrom";
 import DatePickerTo from "../components/DatePickerTo";
 import { addTripToBackend } from "../components/utils/addTripToBackend";
 import TripCards from "../components/TripCards";
-
+import Box from '@mui/material/Box';
+import FlightIcon from '@mui/icons-material/Flight';
+import AddIcon from '@mui/icons-material/Add';
+import {grid2Classes, Typography} from "@mui/material";
 export default function Trips(props) {
   const [open, setOpen] = useState(false);
   const [tripName, setTripName] = React.useState("");
   const [tripFrom, setTripFrom] = React.useState("");
   const [tripTo, setTripTo] = React.useState("");
+
   const openAddNewTrip = () => {
     setOpen(true);
     console.log("New trip modal open!");
@@ -61,10 +65,52 @@ export default function Trips(props) {
     setOpen(false);
   };
   return (
-    <>
-      <h1>Trips</h1>
+    <div
+    >
 
-      <Button onClick={openAddNewTrip}>Add new trip</Button>
+      <Box
+          sx={{
+            display: { xs: "none", md: "flex" },
+            alignItems: "center",
+            textDecoration: "none",
+            underline: "none",
+            boxShadow: "none",
+          }}
+      >
+        <FlightIcon fontSize="large" color="primary" ></FlightIcon>
+        <Typography variant="h4" color="primary" fontWeight="bold"  >
+          Trips
+        </Typography>
+      </Box>
+
+      {/*<ul>*/}
+      {/*  todo: Maybe not need this anymore?*/}
+      {/*  {props.curTrips?.map((item, index) => {*/}
+      {/*    return (*/}
+      {/*      <Link to={`/trips/${item.id}`} key={index}>*/}
+      {/*        <li>{item.name}</li>*/}
+      {/*      </Link>*/}
+      {/*    );*/}
+      {/*  })}*/}
+      {/*</ul>*/}
+
+      <box>
+        {props.curTrips?.map((item) => {
+          return (
+
+                <TripCards
+                   deleteItem = {props.onDeleteTrip}
+                    curItem = {item}
+
+                />
+
+          );
+        })}
+      </box>
+      <div align="center">
+            <Button onClick={openAddNewTrip}variant="outlined" startIcon={<AddIcon />}>
+              Add New Trip
+            </Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>New Trip</DialogTitle>
         <DialogContent>
@@ -74,17 +120,17 @@ export default function Trips(props) {
           </DialogContentText>
           <Stack spacing={2}>
             <TextField
-              margin="dense"
-              id="name"
-              label="Title"
-              type="email"
-              fullWidth
-              variant="standard"
-              onChange={titleChangeHandler}
+                margin="dense"
+                id="name"
+                label="Title"
+                type="email"
+                fullWidth
+                variant="standard"
+                onChange={titleChangeHandler}
             />
             <Stack direction="row" spacing={2}>
               <DatePickerFrom
-                onDateFromChange={DateFromChangeHandler}
+                  onDateFromChange={DateFromChangeHandler}
               ></DatePickerFrom>
               <DatePickerTo onDateToChange={DateToChangeHandler}></DatePickerTo>
             </Stack>
@@ -95,30 +141,7 @@ export default function Trips(props) {
           <Button onClick={confirmAddTripHandler}>New</Button>
         </DialogActions>
       </Dialog>
-      <ul>
-        todo: Maybe not need this anymore?
-        {props.curTrips?.map((item, index) => {
-          return (
-            <Link to={`/trips/${item.id}`} key={index}>
-              <li>{item.name}</li>
-            </Link>
-          );
-        })}
-      </ul>
-      <grid
-      container spacing={3}
-      >
-        {props.curTrips?.map((item) => {
-          return (
-
-                <TripCards
-                    curItem = {item}
-                />
-
-
-          );
-        })}
-      </grid>
-    </>
+      </div>
+    </div>
   );
 }
