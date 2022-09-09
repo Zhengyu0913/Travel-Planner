@@ -25,6 +25,18 @@ const dummyTripDetail = {
           timeSlot: "dinner",
           point: { lat: "34.16178665161133", lon: "-117.12377624511719" },
         },
+        {
+          placeId: "7",
+          placeName: "yyy Restaraunt",
+          timeSlot: "dinner",
+          point: { lat: "34.16178665161133", lon: "-117.12377624511719" },
+        },
+        {
+          placeId: "8",
+          placeName: "yyy Restaraunt",
+          timeSlot: "breakfirst",
+          point: { lat: "34.16178665161133", lon: "-117.12377624511719" },
+        },
       ],
     },
     {
