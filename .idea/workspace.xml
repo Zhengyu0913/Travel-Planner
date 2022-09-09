@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad84d189-3d6e-4dd4-9e36-9920243f494c" name="Changes" comment="" />
+    <list default="true" id="ad84d189-3d6e-4dd4-9e36-9920243f494c" name="Changes" comment="Add Trip Card in trips page.&#10;Todo: detailed see in the page">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/components/TripCards.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/components/TripCards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/pages/Trips.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/pages/Trips.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,13 +22,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Backend" />
-    <property name="nodejs_package_manager_path" value="npm" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  }
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -34,10 +37,28 @@
       <option name="presentableId" value="Default" />
       <updated>1662151382486</updated>
       <workItem from="1662151383982" duration="12000" />
+      <workItem from="1662672215093" duration="320000" />
+      <workItem from="1662672540736" duration="1389000" />
+      <workItem from="1662692593394" duration="4007000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add Trip Card in trips page.&#10;Todo: detailed see in the page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Trip Card in trips page.&#10;Todo: detailed see in the page" />
   </component>
 </project>

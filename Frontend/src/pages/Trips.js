@@ -96,6 +96,7 @@ export default function Trips(props) {
         </DialogActions>
       </Dialog>
       <ul>
+        todo: Maybe not need this anymore?
         {props.curTrips?.map((item, index) => {
           return (
             <Link to={`/trips/${item.id}`} key={index}>
@@ -104,7 +105,20 @@ export default function Trips(props) {
           );
         })}
       </ul>
-      <TripCards></TripCards>
+      <grid
+      container spacing={3}
+      >
+        {props.curTrips?.map((item) => {
+          return (
+
+                <TripCards
+                    curItem = {item}
+                />
+
+
+          );
+        })}
+      </grid>
     </>
   );
 }

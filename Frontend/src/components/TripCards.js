@@ -12,7 +12,7 @@ const Img = styled('img')({
   maxHeight: '100%',
 });
 
-export default function TripCards() {
+export default function TripCards(props) {
   return (
     <Paper
       sx={{
@@ -27,6 +27,7 @@ export default function TripCards() {
       <Grid container spacing={2}>
         <Grid item>
           <ButtonBase sx={{ width: 128, height: 128 }}>
+            Todo: image for city
             <Img alt="complex" src="https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg" />
           </ButtonBase>
         </Grid>
@@ -34,24 +35,25 @@ export default function TripCards() {
           <Grid item xs container direction="column" spacing={2}>
             <Grid item xs>
               <Typography gutterBottom variant="subtitle1" component="div">
-                Standard license
+                {props.curItem.name}
               </Typography>
               <Typography variant="body2" gutterBottom>
-                Full resolution 1920x1080 • JPEG
+                {props.curItem.date[0]+' To ' +props.curItem.date[props.curItem.date.length-1] }
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                ID: 1030114
+                {props.curItem.id}
               </Typography>
             </Grid>
             <Grid item>
               <Typography sx={{ cursor: 'pointer' }} variant="body2">
-                Remove
+                 Remove
+                todo: add eventListener
               </Typography>
             </Grid>
           </Grid>
           <Grid item>
             <Typography variant="subtitle1" component="div">
-              $19.00
+             Todo: getPriceHere
             </Typography>
           </Grid>
         </Grid>
