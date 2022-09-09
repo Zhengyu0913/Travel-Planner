@@ -23,6 +23,14 @@ public class PlaceEntry implements Serializable {
     @JsonProperty("rapid_place_id")
     private String rapidPlaceId;
 
+    @Column(name = "latitude")
+    @JsonProperty("latitude")
+    private Double lat;
+
+    @Column(name = "longitude")
+    @JsonProperty("longitude")
+    private Double lon;
+
     @Enumerated(value = EnumType.STRING)
     @JsonProperty("timeblock")
     private Timeblock timeblock;
@@ -64,4 +72,19 @@ public class PlaceEntry implements Serializable {
         this.timeblock= timeblock;
     }
 
+    public Double getLat() {
+        return lat;
+    }
+
+    public void setLat(Double lat) {
+        this.lat = lat;
+    }
+
+    public Double getLon() {
+        return lon;
+    }
+
+    public void setLon(Double lon) {
+        this.lon = lon;
+    }
 }
