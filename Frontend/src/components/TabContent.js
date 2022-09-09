@@ -1,6 +1,7 @@
-import { Box, Divider, Paper, Typography } from "@mui/material";
+import { Box, Divider, IconButton, Paper, Typography } from "@mui/material";
 import React from "react";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import DeleteIcon from "@mui/icons-material/Delete";
 export default function TabContent(props) {
   return (
     // <ul>
@@ -30,8 +31,25 @@ export default function TabContent(props) {
                 alignItems: "center",
               }}
             >
-              <LocationOnIcon></LocationOnIcon>
-              <Typography key={index}>{item.placeName}</Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "start",
+
+                  alignItems: "center",
+                }}
+              >
+                <IconButton color="primary">
+                  <LocationOnIcon></LocationOnIcon>
+                </IconButton>
+
+                <Typography key={index} sx={{ marginLeft: 2 }}>
+                  {item.placeName}
+                </Typography>
+              </Box>
+              <IconButton>
+                <DeleteIcon></DeleteIcon>
+              </IconButton>
             </Box>
           ))}
       </Box>
@@ -55,8 +73,24 @@ export default function TabContent(props) {
                 alignItems: "center",
               }}
             >
-              <LocationOnIcon></LocationOnIcon>
-              <Typography key={index}>{item.placeName}</Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "start",
+
+                  alignItems: "center",
+                }}
+              >
+                <IconButton color="primary">
+                  <LocationOnIcon></LocationOnIcon>
+                </IconButton>
+                <Typography key={index} sx={{ marginLeft: 2 }}>
+                  {item.placeName}
+                </Typography>
+              </Box>
+              <IconButton>
+                <DeleteIcon></DeleteIcon>
+              </IconButton>
             </Box>
           ))}
       </Box>
@@ -80,8 +114,24 @@ export default function TabContent(props) {
                 alignItems: "center",
               }}
             >
-              <LocationOnIcon></LocationOnIcon>
-              <Typography key={index}>{item.placeName}</Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "start",
+
+                  alignItems: "center",
+                }}
+              >
+                <IconButton color="primary">
+                  <LocationOnIcon></LocationOnIcon>
+                </IconButton>
+                <Typography key={index} sx={{ marginLeft: 2 }}>
+                  {item.placeName}
+                </Typography>
+              </Box>
+              <IconButton>
+                <DeleteIcon></DeleteIcon>
+              </IconButton>
             </Box>
           ))}
       </Box>
