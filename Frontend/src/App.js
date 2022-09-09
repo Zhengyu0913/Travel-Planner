@@ -60,8 +60,8 @@ function App(props) {
   const addTripHandler = (item) => {
     setTrips((prevTrips) => prevTrips.concat(item));
   };
-  const deleteTripHandler = (name) => {
-    setTrips((prevTrips) => prevTrips.filter((item) => item.name !== name));
+  const deleteTripHandler = (id) => {
+    setTrips((prevTrips) => prevTrips.filter((item) => item.id !== id));
   };
   const placeHandler = (value) => {
     console.log(value);

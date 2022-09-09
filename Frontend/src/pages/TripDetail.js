@@ -97,7 +97,7 @@ export default function TripDetail() {
 
   return (
     <Grid container spacing={3} style={{ width: "100%" }}>
-      <Grid item xs={12} md={4}>
+      <Grid item xs={12} md={2}>
         <DailyPlanTabs
           dailyplans={tripDetail}
           days={tripDetail.map((item) => item.date)}
@@ -107,7 +107,7 @@ export default function TripDetail() {
       <Grid
         item
         xs={12}
-        md={8}
+        md={10}
         style={{
           display: "flex",
           justifyContent: "center",

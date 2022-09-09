@@ -1,33 +1,41 @@
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import ButtonBase from '@mui/material/ButtonBase';
+import * as React from "react";
+import { styled } from "@mui/material/styles";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
+import ButtonBase from "@mui/material/ButtonBase";
+import { Button } from "@mui/material";
 
-const Img = styled('img')({
-  margin: 'auto',
-  display: 'block',
-  maxWidth: '100%',
-  maxHeight: '100%',
+const Img = styled("img")({
+  margin: "auto",
+  display: "block",
+  maxWidth: "100%",
+  maxHeight: "100%",
 });
 
-export default function TripCards() {
+export default function TripCards(props) {
+  const deleteTrip = () => {
+    props.onDeleteTrip(props.tripId);
+  };
+
   return (
     <Paper
       sx={{
         p: 2,
-        margin: 'auto',
+        margin: "auto",
         maxWidth: 500,
         flexGrow: 1,
         backgroundColor: (theme) =>
-          theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+          theme.palette.mode === "dark" ? "#1A2027" : "#fff",
       }}
     >
       <Grid container spacing={2}>
         <Grid item>
           <ButtonBase sx={{ width: 128, height: 128 }}>
-            <Img alt="complex" src="https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg" />
+            <Img
+              alt="complex"
+              src="https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg"
+            />
           </ButtonBase>
         </Grid>
         <Grid item xs={12} sm container>
@@ -44,7 +52,7 @@ export default function TripCards() {
               </Typography>
             </Grid>
             <Grid item>
-              <Typography sx={{ cursor: 'pointer' }} variant="body2">
+              <Typography sx={{ cursor: "pointer" }} variant="body2">
                 Remove
               </Typography>
             </Grid>
@@ -56,6 +64,7 @@ export default function TripCards() {
           </Grid>
         </Grid>
       </Grid>
+      <Button onClick={deleteTrip}>Remove</Button>
     </Paper>
   );
 }
