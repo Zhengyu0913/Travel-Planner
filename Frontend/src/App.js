@@ -8,7 +8,6 @@ import { getAllTrips } from "./components/utils/getAllTrips";
 import ActivityDetail from "./pages/ActivityDetail";
 import Explore from "./pages/Explore";
 import Home from "./pages/Home";
-import LandingPage from "./pages/LandingPage";
 import Place from "./pages/Place";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
@@ -60,9 +59,9 @@ function App(props) {
   const addTripHandler = (item) => {
     setTrips((prevTrips) => prevTrips.concat(item));
   };
-  const deleteTripHandler = (name) => {
-    setTrips((prevTrips) => prevTrips.filter((item) => item.name !== name));
-  };
+    const deleteTripHandler = (id) => {
+        setTrips((prevTrips) => prevTrips.filter((item) => item.id !== id));
+    };
   const placeHandler = (value) => {
     console.log(value);
     setPlace(value);

@@ -1,0 +1,25 @@
+.home {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    overflow: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: fixed;
+}
+.container{
+    padding-left: 0px;
+}
+
+.bg-image{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-size: cover;
+    background-position: center;
+    will-change: opacity;
+    /*background-image: url("../assets/images/10708211.jpg");*/
+}
+
+

@@ -1,0 +1,13 @@
+.icon{
+    height:63px;
+    position: absolute;
+}
+
+.tripname{
+    display: flex;
+    margin-top:10px;
+}
+
+.top{
+    display: flex;
+}

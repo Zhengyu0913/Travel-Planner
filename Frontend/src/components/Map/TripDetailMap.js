@@ -24,51 +24,9 @@ const TripDetailMap = (props) => {
           styles: mapStyles,
         }}
       >
-        {/* {props.places.map((place, index) => {
-          return (
-            <Box
-              lat={Number(place.point.lat)}
-              lng={Number(place.point.lon)}
-              key={index}
-              sx={{
-                position: "absolute",
-                transform: "translate(-50%, -50%)",
-                zIndex: 1,
-                "&:hover": { zIndex: 2 },
-              }}
-            >
-              {!matches ? (
-                <LocationOnIcon></LocationOnIcon>
-              ) : (
-                <Paper
-                  elevation={3}
-                  sx={{
-                    padding: "10px",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    width: "100px",
-                  }}
-                >
-                  <Typography variant="subtitle2" gutterBottom>
-                    {place.name}
-                  </Typography>
-                  <img
-                    src={
-                      place.preview
-                        ? place.preview.source
-                        : "https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg"
-                    }
-                    style={{
-                      cursor: "pointer",
-                    }}
-                    alt="travel_planner"
-                  />
-                </Paper>
-              )}
-            </Box>
-          );
-        })} */}
+          <Box lat={props.coords.lat} lng={props.coords.lng}>
+              <LocationOnIcon></LocationOnIcon>
+          </Box>
       </GoogleMapReact>
     </Box>
   );
