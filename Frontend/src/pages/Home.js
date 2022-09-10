@@ -1,13 +1,12 @@
 import React, { Component, createRef, useState, useEffect } from "react";
-// import { useTransition, animated, config } from "react-spring";
+import { useTransition, animated, config } from "react-spring";
+import Container from "@material-ui/core/container";
 
 import SearchBar from "./SearchBar";
 import img1 from "../assets/images/10708211.jpg";
 import img2 from "../assets/images/20220829190804.jpg";
 import img3 from "../assets/images/20220829190821.jpg";
 import img4 from "../assets/images/20220829190830.jpg";
-import { Container } from "@mui/material";
-import { useTransition, animated, config } from "react-spring";
 
 function Home(props) {
   const handleSearch = (option) => {
@@ -51,7 +50,6 @@ function Home(props) {
       <div className="home">
         <SearchBar handleSearch={handleSearch} />
       </div>
-      {/* <h1>Home</h1> */}
     </Container>
   );
 }
