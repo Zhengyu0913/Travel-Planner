@@ -1,0 +1,14 @@
+.search-bar {
+    width: 500px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+
+.error-msg {
+    height: 22px;
+    color: #ff4d4f;
+    margin: 0;
+}

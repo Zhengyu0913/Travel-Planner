@@ -54,7 +54,7 @@ export default function DailyPlanTabs(props) {
 
       {props.plans.map((plan, index) => (
         <TabPanel value={value} index={index} key={index}>
-          <TabContent key={index} plan={plan}></TabContent>
+          <TabContent key={index} plan={plan} onDelete={props.onDelete} getCoords={props.getCoords}></TabContent>
         </TabPanel>
       ))}
     </Box>
