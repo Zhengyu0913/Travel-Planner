@@ -3,6 +3,9 @@
   <component name="FacetManager">
     <facet type="web" name="Web">
       <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
         <webroots>
           <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
         </webroots>
@@ -23,12 +26,7 @@
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
-      <configuration>
-        <fileset id="fileset" name="SecurityConfig" removed="false">
-          <file>file://$MODULE_DIR$/src/main/java/com/travelplanner/backend/SecurityConfig.java</file>
-          <file>file://$MODULE_DIR$/src/main/java/com/travelplanner/backend/ApplicationConfig.java</file>
-        </fileset>
-      </configuration>
+      <configuration />
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
@@ -88,8 +86,8 @@
     <orderEntry type="library" name="Maven: com.sun.istack:istack-commons-runtime:3.0.7" level="project" />
     <orderEntry type="library" name="Maven: org.jvnet.staxex:stax-ex:1.8" level="project" />
     <orderEntry type="library" name="Maven: com.sun.xml.fastinfoset:FastInfoset:1.2.15" level="project" />
-    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.18" level="project" />
-    <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.6.1" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.28" level="project" />
+    <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.11.4" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.15" level="project" />
   </component>
 </module>
