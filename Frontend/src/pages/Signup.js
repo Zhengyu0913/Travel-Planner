@@ -23,6 +23,7 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { AuthContext } from "../context/auth-context";
 import { Paper } from "@mui/material";
+import {message} from "antd";
 
 function Copyright(props) {
   return (
@@ -116,9 +117,11 @@ export default function SignUp() {
       return;
     }
 
-    fetch("/api/signup", {
+    fetch("/signup", {
       method: "POST",
       body: JSON.stringify({
+        first_name: firstNameInput,
+        last_name: lastNameInput,
         email: emailInput,
         password: passwordInput,
       }),
@@ -127,22 +130,15 @@ export default function SignUp() {
       },
     })
       .then((res) => {
-        if (res.ok) {
-          return res.json();
-        } else {
-          return res.json().then((data) => {
-            let errorMessage = "Authentication failed!";
-            if (data && data.error && data.error.message) {
-              errorMessage = data.error.message;
-            }
-            throw new Error(errorMessage);
-          });
+        if (res.status < 200 || res.status >= 300) {
+          throw Error("Failed to sign up")
         }
       })
       .then((data) => {
-        console.log(data);
-        authCtx.login(data.idToken);
-        navigate("/");
+        // console.log(data);
+        // authCtx.login(data.idToken);
+        // navigate("/");
+        message.success(`Successfully signed up`);
       })
       .catch((err) => {
         alert(err.message);
@@ -151,7 +147,6 @@ export default function SignUp() {
     setFirstNameInput("");
     setLastNameInput("");
     setEmailInput("");
-
     setPasswordInput("");
 
     setFirstNameIsTouched(false);
