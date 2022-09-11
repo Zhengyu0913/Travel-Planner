@@ -31,11 +31,11 @@ public class PlaceEntry implements Serializable {
 
     @Column(name = "latitude")
     @JsonProperty("latitude")
-    private Double latitude;
+    private double latitude;
 
     @Column(name = "longitude")
     @JsonProperty("longitude")
-    private Double longitude;
+    private double longitude;
 
     @ManyToOne
     @JsonIgnore

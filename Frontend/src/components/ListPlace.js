@@ -22,6 +22,7 @@ import Cards from "./Cards";
 import MenuIcon from "@mui/icons-material/Menu";
 
 import DirectionsIcon from "@mui/icons-material/Directions";
+import NotFound from "../pages/NotFound";
 const List = ({
   type,
   places,
@@ -34,8 +35,10 @@ const List = ({
   isLoading,
   childClicked,
   setType,
+  isFound,
+  rating,
+  setRating,
 }) => {
-  const [rating, setRating] = useState("");
   const [elRefs, setElRefs] = useState([]);
 
   useEffect(() => {
@@ -55,6 +58,42 @@ const List = ({
       <Typography variant="h4" sx={{ marginBottom: "10px" }}>
         Food & Dining around you
       </Typography>
+      <Box
+        sx={{
+          marginY: "30px",
+        }}
+      >
+        <Autocomplete onPlaceChanged={onPlaceChanged} onLoad={onLoad}>
+          <Paper
+            component="form"
+            sx={{
+              p: "2px 4px",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <IconButton sx={{ p: "10px" }} aria-label="menu">
+              <MenuIcon />
+            </IconButton>
+            <InputBase
+              sx={{ ml: 1, flex: 1 }}
+              placeholder="Search Google Maps"
+              inputProps={{ "aria-label": "search google maps" }}
+            />
+            <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
+              <SearchIcon />
+            </IconButton>
+            <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+            <IconButton
+              color="primary"
+              sx={{ p: "10px" }}
+              aria-label="directions"
+            >
+              <DirectionsIcon />
+            </IconButton>
+          </Paper>
+        </Autocomplete>
+      </Box>
       {isLoading ? (
         <Box
           sx={{
@@ -68,46 +107,6 @@ const List = ({
         </Box>
       ) : (
         <>
-          <Box
-            sx={{
-              marginY: "30px",
-            }}
-          >
-            <Autocomplete onPlaceChanged={onPlaceChanged} onLoad={onLoad}>
-              <Paper
-                component="form"
-                sx={{
-                  p: "2px 4px",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <IconButton sx={{ p: "10px" }} aria-label="menu">
-                  <MenuIcon />
-                </IconButton>
-                <InputBase
-                  sx={{ ml: 1, flex: 1 }}
-                  placeholder="Search Google Maps"
-                  inputProps={{ "aria-label": "search google maps" }}
-                />
-                <IconButton
-                  type="button"
-                  sx={{ p: "10px" }}
-                  aria-label="search"
-                >
-                  <SearchIcon />
-                </IconButton>
-                <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-                <IconButton
-                  color="primary"
-                  sx={{ p: "10px" }}
-                  aria-label="directions"
-                >
-                  <DirectionsIcon />
-                </IconButton>
-              </Paper>
-            </Autocomplete>
-          </Box>
           <Stack direction="row" spacing={2} sx={{ marginY: "30px" }}>
             <FormControl fullWidth variant="standard">
               <InputLabel id="demo-simple-select-label">Type</InputLabel>
@@ -118,7 +117,6 @@ const List = ({
                 label="Date"
                 onChange={(e) => setType(e.target.value)}
               >
-                <MenuItem value={0}>All</MenuItem>
                 <MenuItem value="foods">Restaurants</MenuItem>
                 <MenuItem value="accomodations">Hotels</MenuItem>
                 <MenuItem value="interesting_places">Attractions</MenuItem>
@@ -133,13 +131,14 @@ const List = ({
                 label="Rating"
                 onChange={(e) => setRating(e.target.value)}
               >
-                <MenuItem value={0}>All</MenuItem>
-                <MenuItem value={3}>Above 3.0</MenuItem>
-                <MenuItem value={4}>Above 4.0</MenuItem>
-                <MenuItem value={4.5}>Above 4.5</MenuItem>
+                <MenuItem value="">All</MenuItem>
+                <MenuItem value="3">Above 3.0</MenuItem>
+                <MenuItem value="4">Above 4.0</MenuItem>
+                <MenuItem value="4.5">Above 4.5</MenuItem>
               </Select>
             </FormControl>
           </Stack>
+
           <Grid
             container
             spacing={3}
@@ -165,13 +164,20 @@ const List = ({
                   }
                   website={place.url ? place.url : "/"}
                   addressRoad={
-                    place.address.road ? place.address.road : "Not found"
+                    place.address.road ? place.address.road : "Street Not found"
                   }
                   addressState={
-                    place.address.state ? place.address.state : "Not found"
+                    place.address.state
+                      ? place.address.state
+                      : "State Not found"
                   }
                   addressCountry={
-                    place.address.country ? place.address.country : "Not found"
+                    place.address.country
+                      ? place.address.country
+                      : "Country Not found"
+                  }
+                  addressCity={
+                    place.address.city ? place.address.city : "City Not found"
                   }
                 />
               </Grid>

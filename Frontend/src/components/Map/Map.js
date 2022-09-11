@@ -2,6 +2,7 @@ import React from "react";
 import GoogleMapReact from "google-map-react";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { Box, Paper, Typography, useMediaQuery } from "@mui/material";
+import mapStyles from "./mapStyles";
 
 const Map = (props) => {
   const matches = useMediaQuery("(min-width:600px)");
@@ -17,6 +18,11 @@ const Map = (props) => {
         center={props.coords}
         defaultZoom={14}
         margin={[50, 50, 50, 50]}
+        options={{
+          disableDefaultUI: true,
+          zoomControl: true,
+          styles: mapStyles,
+        }}
         onChange={(e) => {
           props.setCoords({ lat: e.center.lat, lng: e.center.lng });
           props.setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
@@ -25,10 +31,16 @@ const Map = (props) => {
       >
         {props.places.map((place, index) => {
           return (
-            <div
+            <Box
               lat={Number(place.point.lat)}
               lng={Number(place.point.lon)}
               key={index}
+              sx={{
+                position: "absolute",
+                transform: "translate(-50%, -50%)",
+                zIndex: 1,
+                "&:hover": { zIndex: 2 },
+              }}
             >
               {!matches ? (
                 <LocationOnIcon></LocationOnIcon>
@@ -59,7 +71,7 @@ const Map = (props) => {
                   />
                 </Paper>
               )}
-            </div>
+            </Box>
           );
         })}
       </GoogleMapReact>

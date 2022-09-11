@@ -10,33 +10,83 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f8a56ac2-33ca-499c-b3d5-f0b6868d0e9c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/workspace_BACKUP_564.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/workspace_BASE_564.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/workspace_REMOTE_564.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Frontend/src/assets/images/10708211.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Frontend/src/assets/images/20220829190804.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Frontend/src/assets/images/20220829190821.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Frontend/src/assets/images/20220829190830.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Frontend/src/components/DailyPlanTabs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Frontend/src/components/Map/TripDetailMap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Frontend/src/components/Map/mapStyles.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Frontend/src/components/TabContent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Frontend/src/components/TripCards.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Frontend/src/components/utils/addDailyPlanToBackend.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Frontend/src/components/utils/addTripToBackend.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Frontend/src/components/utils/getAllTrips.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Frontend/src/components/utils/getDailyPlans.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Frontend/src/pages/NotFound.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Frontend/src/pages/SearchBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Frontend/src/styles/Home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Frontend/src/styles/SearchBar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Frontend/src/styles/TripDetail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace_LOCAL_564.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/664b61e9-0847-41ba-9da3-3a9cd485ff46.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/664b61e9-0847-41ba-9da3-3a9cd485ff46/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/664b61e9-0847-41ba-9da3-3a9cd485ff46/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/664b61e9-0847-41ba-9da3-3a9cd485ff46/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/664b61e9-0847-41ba-9da3-3a9cd485ff46/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/914660d1-02a4-4cd3-837d-1ccad3889a6a.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/914660d1-02a4-4cd3-837d-1ccad3889a6a/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/914660d1-02a4-4cd3-837d-1ccad3889a6a/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/914660d1-02a4-4cd3-837d-1ccad3889a6a/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/914660d1-02a4-4cd3-837d-1ccad3889a6a/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/99d02ca8-e302-4051-8309-c549d530ecc1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/99d02ca8-e302-4051-8309-c549d530ecc1/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/99d02ca8-e302-4051-8309-c549d530ecc1/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/99d02ca8-e302-4051-8309-c549d530ecc1/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/99d02ca8-e302-4051-8309-c549d530ecc1/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c87027e4-b6d9-430d-9997-d14f293b81cb.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c87027e4-b6d9-430d-9997-d14f293b81cb/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c87027e4-b6d9-430d-9997-d14f293b81cb/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c87027e4-b6d9-430d-9997-d14f293b81cb/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c87027e4-b6d9-430d-9997-d14f293b81cb/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cb311573-07b3-49b8-8f91-469d10396321.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cb311573-07b3-49b8-8f91-469d10396321/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cb311573-07b3-49b8-8f91-469d10396321/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cb311573-07b3-49b8-8f91-469d10396321/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cb311573-07b3-49b8-8f91-469d10396321/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d246d2d4-c5d6-4314-a28b-f81d7524d515.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d246d2d4-c5d6-4314-a28b-f81d7524d515/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d246d2d4-c5d6-4314-a28b-f81d7524d515/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d246d2d4-c5d6-4314-a28b-f81d7524d515/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d246d2d4-c5d6-4314-a28b-f81d7524d515/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/db17ab64-38d9-4a0d-ac88-4033a0119bb7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/db17ab64-38d9-4a0d-ac88-4033a0119bb7/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/db17ab64-38d9-4a0d-ac88-4033a0119bb7/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/db17ab64-38d9-4a0d-ac88-4033a0119bb7/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/db17ab64-38d9-4a0d-ac88-4033a0119bb7/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/controller/TripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/controller/TripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/dao/PlaceEntryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/dao/PlaceEntryDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/entity/DailyPlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/entity/DailyPlan.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/entity/PlaceEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/entity/PlaceEntry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/entity/TimeBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/entity/TimeBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/entity/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/entity/Trip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/service/DailyPlanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/service/DailyPlanService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/service/TripService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/service/TripService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/controller/TripController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/controller/TripController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/dao/PlaceEntryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/dao/PlaceEntryDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/entity/DailyPlan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/entity/DailyPlan.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/entity/PlaceEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/entity/PlaceEntry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/entity/Trip.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/entity/Trip.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/service/DailyPlanService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/service/DailyPlanService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/service/TripService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/service/TripService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/controller/TripController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/controller/TripController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/dao/PlaceEntryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/dao/PlaceEntryDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/DailyPlan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/DailyPlan.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/PlaceEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/PlaceEntry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/Trip.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/Trip.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/service/DailyPlanService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/service/DailyPlanService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/service/TripService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/service/TripService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/components/Cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/components/Cards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/components/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/components/ListPlace.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/components/ListPlace.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/components/Map/Map.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/components/Map/Map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/pages/Explore.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/pages/Explore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/pages/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/pages/Signin.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/pages/Signin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/pages/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/pages/Signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/pages/TripDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/pages/TripDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/pages/Trips.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/pages/Trips.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,6 +261,7 @@
       <workItem from="1662669145012" duration="5115000" />
       <workItem from="1662696525133" duration="192000" />
       <workItem from="1662696776477" duration="37724000" />
+      <workItem from="1662881854820" duration="427000" />
     </task>
     <servers />
   </component>
