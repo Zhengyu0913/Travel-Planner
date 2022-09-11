@@ -46,7 +46,7 @@ public class PlaceEntryDAO {
         try {
             session = sessionFactory.openSession();
             DailyPlan dailyPlan = placeEntry.getDailyPlan();
-            dailyPlan.getPlaceEntryList().remove(placeEntry);
+            dailyPlan.getPlaceEntrySet().remove(placeEntry);
 
             session.beginTransaction();
             session.delete(placeEntry);

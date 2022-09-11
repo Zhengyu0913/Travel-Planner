@@ -6,8 +6,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 @Entity
 @Table(name = "Users")
@@ -32,13 +34,13 @@ public class User implements Serializable {
     private String lastName;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy="user")
-    List<Trip> tripList = new ArrayList<>();
+    Set<Trip> tripList = new HashSet<>();
 
-    public List<Trip> getTripList() {
+    public Set<Trip> getTripSet() {
         return tripList;
     }
 
-    public void setTripList(List<Trip> tripList) {
+    public void setTripSet(Set<Trip> tripList) {
         this.tripList = tripList;
     }
 
