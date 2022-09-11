@@ -116,9 +116,11 @@ export default function SignUp() {
       return;
     }
 
-    fetch("/api/signup", {
+    fetch("/signup", {
       method: "POST",
       body: JSON.stringify({
+        first_name: firstNameInput,
+        last_name: lastNameInput,
         email: emailInput,
         password: passwordInput,
       }),
