@@ -11,9 +11,23 @@ export default function Explore(props) {
   const [coords, setCoords] = useState({});
   const [bounds, setBounds] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [isFound, setIsFound] = useState(false);
   const [childClicked, setChildClicked] = useState(null);
-  const [type, setType] = useState("");
+  const [type, setType] = useState("interesting_places");
+  const [filteredPlaces, setFilteredPlaces] = useState([]);
+  const [rating, setRating] = useState("");
+  // useEffect(() => {
+  //   const filtered = places.filter(
+  //     (place) => Number(place.rate.replace(/[^\d.]/g, "")) > rating
+  //   );
 
+  //   setFilteredPlaces(filtered);
+  // }, [rating]);
+  // useEffect(() => {
+  //   const filtered = places.filter((place) => place.kinds.includes(type));
+
+  //   setFilteredPlaces(filtered);
+  // }, [type]);
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       ({ coords: { latitude, longitude } }) => {
@@ -26,10 +40,17 @@ export default function Explore(props) {
       setIsLoading(true);
       setPlaces([]); //每次刷新地图时，清空places
       getPlacesData(bounds.sw, bounds.ne).then((data) => {
-        const xidArr = data.map((item) => item.properties.xid);
-        console.log(xidArr);
+        const filteredData = data.filter((item) => {
+          return item.properties.kinds.includes(type);
+        });
+        const xidArr = filteredData.map((item) => item.properties.xid);
+
         const filteredArr = xidArr.slice(0, 20);
         console.log(filteredArr);
+        if (filteredArr.length === 0) {
+          setIsFound(false);
+          setIsLoading(false);
+        }
 
         for (let i = 0; i < filteredArr.length; i++) {
           const id = xidArr[i];
@@ -39,12 +60,15 @@ export default function Explore(props) {
             setPlaces((prev) => {
               return [...prev, res];
             }); //在异步请求里面，state更新时，需要用到前一个状态照片,如果直接更新，状态保持不变
+            setFilteredPlaces([]);
+            setRating("");
             setIsLoading(false);
+            setIsFound(true);
           });
         }
       });
     }
-  }, [bounds]);
+  }, [bounds, type]);
   const onLoad = (autoC) => setAutocomplete(autoC);
   const onPlaceChanged = () => {
     const lat = autocomplete.getPlace().geometry.location.lat();
@@ -59,7 +83,7 @@ export default function Explore(props) {
         <ListPlace
           onPlaceChanged={onPlaceChanged}
           onLoad={onLoad}
-          places={places}
+          places={filteredPlaces.length ? filteredPlaces : places}
           setPlaces={setPlaces}
           availableTrips={props.curTrips}
           addTrip={props.onAddTrip}
@@ -68,6 +92,9 @@ export default function Explore(props) {
           childClicked={childClicked}
           type={type}
           setType={setType}
+          rating={rating}
+          setRating={setRating}
+          isFound={isFound}
         />
       </Grid>
       <Grid
@@ -84,7 +111,7 @@ export default function Explore(props) {
           setBounds={setBounds}
           setCoords={setCoords}
           coords={coords}
-          places={places}
+          places={filteredPlaces.length ? filteredPlaces : places}
           setChildClicked={setChildClicked}
         />
       </Grid>

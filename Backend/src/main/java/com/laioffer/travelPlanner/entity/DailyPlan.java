@@ -4,9 +4,7 @@ import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Entity
 @Table(name = "Daily_Plans")
@@ -30,7 +28,7 @@ public class DailyPlan implements Serializable {
     private Trip trip;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy="dailyPlan")
-    List<PlaceEntry> placeEntryList = new ArrayList<>();
+    Set<PlaceEntry> placeEntrySet = new HashSet<>();
 
     public Trip getTrip() {
         return trip;
@@ -40,12 +38,12 @@ public class DailyPlan implements Serializable {
         this.trip = trip;
     }
 
-    public List<PlaceEntry> getPlaceEntryList() {
-        return placeEntryList;
+    public Set<PlaceEntry> getPlaceEntrySet() {
+        return placeEntrySet;
     }
 
-    public void setPlaceEntryList(List<PlaceEntry> placeEntryList) {
-        this.placeEntryList = placeEntryList;
+    public void setPlaceEntrySet(Set<PlaceEntry> placeEntrySet) {
+        this.placeEntrySet = this.placeEntrySet;
     }
 
     public int getId() {

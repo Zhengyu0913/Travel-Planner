@@ -19,7 +19,7 @@ public class TripService {
         User user = userService.getUserByEmail(email);
         if (user != null) {
             Trip trip = new Trip();
-            trip.setTripName(tripName);
+            trip.setName(tripName);
             trip.setStartDate(startDate);
             trip.setEndDate(endDate);
             trip.setUser(user);

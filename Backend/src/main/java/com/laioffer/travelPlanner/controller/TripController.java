@@ -14,7 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 public class TripController {
@@ -43,15 +45,15 @@ public class TripController {
     // 只是开发中测试用的
     @RequestMapping(value = "/trips", method = RequestMethod.GET)
     @ResponseBody
-    public List<Trip> getAllTrips(HttpServletRequest request, HttpServletResponse response) {
+    public Set<Trip> getAllTrips(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession(false);
         if (session == null) {
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-            return new ArrayList<>();
+            return new HashSet<>();
         }
         String email = (String) session.getAttribute("email");
         User user = userService.getUserByEmail(email);
-        return user.getTripList();
+        return user.getTripSet();
     }
 
     // 只是开发中测试用的

@@ -14,7 +14,6 @@ import DateSelect from "./DateSelect";
 import TimeSelect from "./TimeSelect";
 import { getAllDate } from "./utils/getAllDate";
 import {
-  Box,
   Card,
   CardActions,
   CardContent,
@@ -22,9 +21,29 @@ import {
   Typography,
 } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-export default function Cards(props) {
-  if (props.selected)
-    props.refProp?.current?.scrollIntoView({
+import { AuthContext } from "../context/auth-context";
+import { useNavigate } from "react-router-dom";
+import { getAllTrips } from "./utils/getAllTrips";
+import { addTripToBackend } from "./utils/addTripToBackend";
+import { addDailyPlanToBackend } from "./utils/addDailyPlanToBackend";
+
+export default function Cards({
+  refProp,
+  selected,
+  placeName,
+  placeId,
+  availableTrips,
+  addTrip,
+  deleteTrip,
+  img,
+  website,
+  addressRoad,
+  addressState,
+  addressCountry,
+  addressCity,
+}) {
+  if (selected)
+    refProp?.current?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
@@ -37,7 +56,8 @@ export default function Cards(props) {
   const [currentSelectedDate, setCurrentSelectedDate] = React.useState("");
   const [currentSelectedTimeSlot, setCurrentSelectedTimeSlot] =
     React.useState("");
-
+  const authCtx = React.useContext(AuthContext);
+  const navigate = useNavigate();
   const timeSlotChangeHandler = (v) => {
     setCurrentSelectedTimeSlot(v);
   };
@@ -63,7 +83,24 @@ export default function Cards(props) {
     const dateArr = getAllDate(tripFrom, tripTo);
     console.log(dateArr);
 
-    props.addTrip({ name: tripName, date: dateArr });
+    addTrip({ name: tripName, date: dateArr });
+    // addTripToBackend({ name: tripName, date: dateArr })
+    //   .then((res) => {
+    //     if (res.ok) {
+    //       return res.json();
+    //     } else {
+    //       return res.json().then((data) => {
+    //         let errorMessage = "Add trip failed!";
+    //         throw new Error(errorMessage);
+    //       });
+    //     }
+    //   })
+    //   .then((data) => {
+    //     console.log(data);
+    //   })
+    //   .catch((err) => {
+    //     alert(err.message);
+    //   });
     console.log(JSON.stringify({ name: tripName, date: dateArr })); //发送给后端
     setOpen(false);
   };
@@ -71,11 +108,28 @@ export default function Cards(props) {
   const confirmAddDailyPlanHandler = () => {
     const dailyPlan = {
       tripName: currentSelectedTrip,
-      placeName: props.placeName,
-      placeId: props.placeId,
+      placeName: placeName,
+      placeId: placeId,
       day: currentSelectedDate,
       timeSlot: currentSelectedTimeSlot,
     };
+    // addDailyPlanToBackend(dailyPlan)
+    //   .then((res) => {
+    //     if (res.ok) {
+    //       return res.json();
+    //     } else {
+    //       return res.json().then((data) => {
+    //         let errorMessage = "Add trip failed!";
+    //         throw new Error(errorMessage);
+    //       });
+    //     }
+    //   })
+    //   .then((data) => {
+    //     console.log(data);
+    //   })
+    //   .catch((err) => {
+    //     alert(err.message);
+    //   });
     console.log(JSON.stringify(dailyPlan)); //发送给后端
     setOpenDailyPlan(false);
   };
@@ -92,7 +146,19 @@ export default function Cards(props) {
     setOpenDailyPlan(true);
   };
   const addTripHandler = () => {
-    if (props.availableTrips.length === 0) {
+    // if (!authCtx.isLoggedIn) {
+    //   navigate("/signin");
+    // } else {
+    //   getAllTrips().then((trips) => {
+    //     if (trips.length === 0) {
+    //       console.log("Please add a new trip first");
+    //       openAddNewTrip();
+    //     } else {
+    //       openAddDailyPlan();
+    //     }
+    //   });
+    // }
+    if (availableTrips.length === 0) {
       console.log("Please add a new trip first");
       openAddNewTrip();
     } else {
@@ -106,11 +172,11 @@ export default function Cards(props) {
           component="img"
           alt="green iguana"
           height="350"
-          image={props.img}
+          image={img}
         ></CardMedia>
         <CardContent>
           <Typography gutterBottom variant="h5" sx={{ marginBottom: "20px" }}>
-            {props.placeName}
+            {placeName}
           </Typography>
           {
             <Typography
@@ -120,10 +186,11 @@ export default function Cards(props) {
                 alignItems: "center",
                 justifyContent: "space-between",
               }}
+              component="div"
             >
               <LocationOnIcon />
               <Typography gutterBottom variant="body2" color="textSecondary">
-                {props.addressRoad + " , " + props.addressState}
+                {addressRoad + " , " + addressCity + " , " + addressState}
               </Typography>
             </Typography>
           }
@@ -132,7 +199,7 @@ export default function Cards(props) {
           <Button
             size="small"
             variant="outlined"
-            onClick={() => window.open(props.website, "_blank")}
+            onClick={() => window.open(website, "_blank")}
           >
             Learn More
           </Button>
@@ -181,12 +248,12 @@ export default function Cards(props) {
             </DialogContentText>
 
             <TripSelect
-              curTrips={props.availableTrips}
+              curTrips={availableTrips}
               onTripChange={tripChangeHandler}
             ></TripSelect>
             <DateSelect
               curSelectedTrip={currentSelectedTrip}
-              curTrips={props.availableTrips}
+              curTrips={availableTrips}
               onDateChange={dateChangeHandler}
             ></DateSelect>
             <TimeSelect onTimeSlotChange={timeSlotChangeHandler}></TimeSelect>

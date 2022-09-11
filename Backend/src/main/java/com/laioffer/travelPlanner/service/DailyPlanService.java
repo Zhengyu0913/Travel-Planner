@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class DailyPlanService {
@@ -47,8 +48,8 @@ public class DailyPlanService {
 
     public void clearDailyPlan(int dailyPlanId) {
         DailyPlan dailyPlan = dailyPlanDAO.getDailyPlanById(dailyPlanId);
-        List<PlaceEntry> placeEntryList = dailyPlan.getPlaceEntryList();
-        Iterator<PlaceEntry> i = placeEntryList.iterator();
+        Set<PlaceEntry> placeEntrySet = dailyPlan.getPlaceEntrySet();
+        Iterator<PlaceEntry> i = placeEntrySet.iterator();
         while (i.hasNext()) {
             PlaceEntry placeEntry = i.next();
             i.remove();
@@ -58,7 +59,7 @@ public class DailyPlanService {
 
     public void clearDailyPlanByTimeBlock(int dailyPlanId, TimeBlock timeBlock) {
         DailyPlan dailyPlan = dailyPlanDAO.getDailyPlanById(dailyPlanId);
-        List<PlaceEntry> placeEntryList = dailyPlan.getPlaceEntryList();
+        Set<PlaceEntry> placeEntryList = dailyPlan.getPlaceEntrySet();
         Iterator<PlaceEntry> i = placeEntryList.iterator();
         while (i.hasNext()) {
             PlaceEntry placeEntry = i.next();
