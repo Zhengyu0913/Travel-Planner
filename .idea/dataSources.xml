@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="MySQL - @travelplanner-database.cqrtbv3ulyq1.us-west-1.rds.amazonaws.com" uuid="55d70b04-4227-426d-b577-9e0a28310604">
+    <data-source source="LOCAL" name="travel planner" uuid="55d70b04-4227-426d-b577-9e0a28310604">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://travelplanner-database.cqrtbv3ulyq1.us-west-1.rds.amazonaws.com:3306</jdbc-url>
+      <jdbc-url>jdbc:mysql://travelplanner-database.cqrtbv3ulyq1.us-west-1.rds.amazonaws.com:3306/travelPlanner</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
