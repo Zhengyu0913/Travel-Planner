@@ -16,7 +16,9 @@ public class PlaceEntryController {
     @RequestMapping(value = "/place", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.CREATED)
     public void addPlaceEntry(@RequestBody AddPlaceEntryRequestBody requestBody) {
-        placeEntryService.savePlaceEntry(requestBody.getTripId(), requestBody.getDate(), requestBody.getRapidPlaceId(), requestBody.getTimeBlock());
+        placeEntryService.savePlaceEntry(requestBody.getTripId(), requestBody.getDate(),
+                requestBody.getRapidPlaceId(), requestBody.getTimeBlock(),
+                requestBody.getLatitude(), requestBody.getLongitude());
     }
 
     @RequestMapping(value = "/place/{entry_id}", method = RequestMethod.GET)

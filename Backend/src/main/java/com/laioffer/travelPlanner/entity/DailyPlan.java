@@ -43,7 +43,7 @@ public class DailyPlan implements Serializable {
     }
 
     public void setPlaceEntrySet(Set<PlaceEntry> placeEntrySet) {
-        this.placeEntrySet = this.placeEntrySet;
+        this.placeEntrySet = placeEntrySet;
     }
 
     public int getId() {

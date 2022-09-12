@@ -12,6 +12,7 @@ public class AddTripRequestBody {
     private final Date startDate;
     private final Date endDate;
 
+    // need revision
     @JsonCreator
     public AddTripRequestBody(@JsonProperty("trip_name") String tripName,
                               @JsonProperty("start_date") @DateTimeFormat(pattern="yyyy-MM-dd") Date startDate,

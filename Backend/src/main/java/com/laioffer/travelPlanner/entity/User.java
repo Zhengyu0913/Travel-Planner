@@ -34,14 +34,14 @@ public class User implements Serializable {
     private String lastName;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy="user")
-    Set<Trip> tripList = new HashSet<>();
+    Set<Trip> tripSet = new HashSet<>();
 
     public Set<Trip> getTripSet() {
-        return tripList;
+        return tripSet;
     }
 
-    public void setTripSet(Set<Trip> tripList) {
-        this.tripList = tripList;
+    public void setTripSet(Set<Trip> tripSet) {
+        this.tripSet = tripSet;
     }
 
     public String getEmail() {
