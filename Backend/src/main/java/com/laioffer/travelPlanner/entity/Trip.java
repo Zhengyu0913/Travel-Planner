@@ -38,7 +38,7 @@ public class Trip implements Serializable {
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy="trip")
-    Set<DailyPlan> dailyPlanList = new HashSet<>();
+    Set<DailyPlan> dailyPlanSet = new HashSet<>();
 
     public User getUser() {
         return user;
@@ -49,11 +49,11 @@ public class Trip implements Serializable {
     }
 
     public Set<DailyPlan> getDailyPlanSet() {
-        return dailyPlanList;
+        return dailyPlanSet;
     }
 
-    public void setDailyPlanSet(Set<DailyPlan> dailyPlanList) {
-        this.dailyPlanList = dailyPlanList;
+    public void setDailyPlanSet(Set<DailyPlan> dailyPlanSet) {
+        this.dailyPlanSet = dailyPlanSet;
     }
 
     public int getId() {

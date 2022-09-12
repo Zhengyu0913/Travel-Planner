@@ -12,16 +12,22 @@ public class AddPlaceEntryRequestBody {
     private final Date date;
     private final TimeBlock timeBlock;
     private final String rapidPlaceId;
+    private final double latitude;
+    private final double longitude;
 
     @JsonCreator
     public AddPlaceEntryRequestBody(@JsonProperty("trip_id") int tripId,
                                     @JsonProperty("date") @DateTimeFormat(pattern="yyyy-MM-dd") Date date,
                                     @JsonProperty("time_block") TimeBlock timeBlock,
-                                    @JsonProperty("rapid_place_id") String rapidPlaceId) {
+                                    @JsonProperty("rapid_place_id") String rapidPlaceId,
+                                    @JsonProperty("latitude") double latitude,
+                                    @JsonProperty("longitude") double longitude) {
         this.tripId = tripId;
         this.date = date;
         this.timeBlock = timeBlock;
         this.rapidPlaceId = rapidPlaceId;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public int getTripId() {
@@ -39,4 +45,8 @@ public class AddPlaceEntryRequestBody {
     public String getRapidPlaceId() {
         return rapidPlaceId;
     }
+
+    public double getLatitude() { return latitude; }
+
+    public double getLongitude() { return longitude; }
 }
