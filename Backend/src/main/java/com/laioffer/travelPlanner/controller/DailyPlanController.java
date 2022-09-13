@@ -1,18 +1,25 @@
 package com.laioffer.travelPlanner.controller;
 
 import com.laioffer.travelPlanner.entity.DailyPlan;
+import com.laioffer.travelPlanner.entity.PlaceEntry;
 import com.laioffer.travelPlanner.entity.TimeBlock;
 import com.laioffer.travelPlanner.request.AddDailyPlanRequestBody;
 import com.laioffer.travelPlanner.service.DailyPlanService;
+import com.laioffer.travelPlanner.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 @Controller
 public class DailyPlanController {
     @Autowired
     private DailyPlanService dailyPlanService;
+    @Autowired
+    private UserService userService;
 
     /* ---------------- Current API (P0) -------------- */
     /**
@@ -20,8 +27,8 @@ public class DailyPlanController {
      * 基于daily_plan_id
      */
     @RequestMapping(value = "/daily_plan/{daily_plan_id}/place_entry", method = RequestMethod.DELETE)
-    @ResponseStatus(value = HttpStatus.OK)
-    public void clearDailyPlan(@PathVariable ("daily_plan_id") int dailyPlanId) {
+    public void clearDailyPlan(@PathVariable ("daily_plan_id") int dailyPlanId, HttpServletRequest request, HttpServletResponse response) {
+        if (!userService.isLoggedIn(request, response)) return;
         dailyPlanService.clearDailyPlan(dailyPlanId);
     }
 
@@ -30,8 +37,9 @@ public class DailyPlanController {
      * 基于daily_plan_id和time_block
      */
     @RequestMapping(value = "/daily_plan/{daily_plan_id}/place_entry/{time_block}", method = RequestMethod.DELETE)
-    @ResponseStatus(value = HttpStatus.OK)
-    public void clearDailyPlanByTimeBlock(@PathVariable ("daily_plan_id") int dailyPlanId, @PathVariable ("time_block") TimeBlock timeBlock) {
+    public void clearDailyPlanByTimeBlock(@PathVariable ("daily_plan_id") int dailyPlanId, @PathVariable ("time_block") TimeBlock timeBlock,
+                                            HttpServletRequest request, HttpServletResponse response) {
+        if (!userService.isLoggedIn(request, response)) return;
         dailyPlanService.clearDailyPlanByTimeBlock(dailyPlanId, timeBlock);
     }
 
@@ -43,8 +51,9 @@ public class DailyPlanController {
      * 此API为添加一个新的daily plan (涉及更改trip日期)
      */
     @RequestMapping(value = "/daily_plan", method = RequestMethod.POST)
-    @ResponseStatus(value = HttpStatus.CREATED)
-    public void addDailyPlan(@RequestBody AddDailyPlanRequestBody requestBody) {
+    public void addDailyPlan(@RequestBody AddDailyPlanRequestBody requestBody,
+                             HttpServletRequest request, HttpServletResponse response) {
+        if (!userService.isLoggedIn(request, response)) return;
         dailyPlanService.saveDailyPlan(requestBody.getTripId(), requestBody.getDate());
     }
 
@@ -53,9 +62,10 @@ public class DailyPlanController {
      * 此API为查看daily plan基于daily plan id
      */
     @RequestMapping(value = "/daily_plan/{daily_plan_id}", method = RequestMethod.GET)
-    @ResponseStatus(value = HttpStatus.OK)
     @ResponseBody
-    public DailyPlan getDailyPlanById(@PathVariable ("daily_plan_id") int dailyPlanId) {
+    public DailyPlan getDailyPlanById(@PathVariable ("daily_plan_id") int dailyPlanId,
+                                      HttpServletRequest request, HttpServletResponse response) {
+        if (!userService.isLoggedIn(request, response)) return null;
         return dailyPlanService.getDailyPlanById(dailyPlanId);
     }
 
@@ -65,8 +75,9 @@ public class DailyPlanController {
      * (涉及更改trip日期)
      */
     @RequestMapping(value = "/daily_plan/{daily_plan_id}", method = RequestMethod.DELETE)
-    @ResponseStatus(value = HttpStatus.OK)
-    public void deleteDailyPlanById(@PathVariable("daily_plan_id") int dailyPlanId) {
+    public void deleteDailyPlanById(@PathVariable("daily_plan_id") int dailyPlanId,
+                                    HttpServletRequest request, HttpServletResponse response) {
+        if (!userService.isLoggedIn(request, response)) return;
         dailyPlanService.deleteDailyPlanById(dailyPlanId);
     }
 }

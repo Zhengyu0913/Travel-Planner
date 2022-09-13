@@ -9,29 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32fe05fa-9b1a-4676-95d7-770e7a24b37c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/55d70b04-4227-426d-b577-9e0a28310604.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/55d70b04-4227-426d-b577-9e0a28310604.xml" afterDir="false" />
+    <list default="true" id="de5d26bf-a2a6-4154-936e-4be329ad9855" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/55d70b04-4227-426d-b577-9e0a28310604.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/55d70b04-4227-426d-b577-9e0a28310604/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/55d70b04-4227-426d-b577-9e0a28310604/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/55d70b04-4227-426d-b577-9e0a28310604/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/55d70b04-4227-426d-b577-9e0a28310604/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/55d70b04-4227-426d-b577-9e0a28310604/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/laioffer/travelPlanner/controller/PlaceEntryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/laioffer/travelPlanner/controller/PlaceEntryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/laioffer/travelPlanner/entity/DailyPlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/laioffer/travelPlanner/entity/DailyPlan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/laioffer/travelPlanner/entity/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/laioffer/travelPlanner/entity/Trip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/laioffer/travelPlanner/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/laioffer/travelPlanner/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/laioffer/travelPlanner/request/AddPlaceEntryRequestBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/laioffer/travelPlanner/request/AddPlaceEntryRequestBody.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/laioffer/travelPlanner/service/PlaceEntryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/laioffer/travelPlanner/service/PlaceEntryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/controller/TripController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/controller/TripController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/dao/PlaceEntryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/dao/PlaceEntryDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/entity/DailyPlan.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/entity/DailyPlan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/entity/Trip.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/entity/Trip.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/service/DailyPlanService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/service/DailyPlanService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/controller/TripController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/controller/TripController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/dao/PlaceEntryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/dao/PlaceEntryDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/DailyPlan.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/DailyPlan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/Trip.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/Trip.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/service/DailyPlanService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/service/DailyPlanService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,10 +58,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Backend" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 9.0.22" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.22" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.60" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.60" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Backend:war exploded">

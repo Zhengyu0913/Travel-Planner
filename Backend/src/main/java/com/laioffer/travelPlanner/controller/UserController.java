@@ -6,21 +6,27 @@ import com.laioffer.travelPlanner.request.SignInRequestBody;
 import com.laioffer.travelPlanner.response.SignInResponseBody;
 import com.laioffer.travelPlanner.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class UserController {
     @Autowired
     private UserService userService;
+    private ObjectMapper objectMapper = new ObjectMapper();
 
     @RequestMapping(value = "/signin", method = RequestMethod.POST)
     public void signIn(@RequestBody SignInRequestBody requestBody, HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -40,7 +46,6 @@ public class UserController {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
         }
     }
-
 
     @RequestMapping(value = "/signout", method = RequestMethod.POST)
     public void signOut(HttpServletRequest request, HttpServletResponse response) {
