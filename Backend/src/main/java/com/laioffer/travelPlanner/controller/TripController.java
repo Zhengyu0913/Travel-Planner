@@ -28,30 +28,19 @@ public class TripController {
 
     // 只是开发中测试用的
     @RequestMapping(value = "/trip", method = RequestMethod.POST)
-    @ResponseStatus(value = HttpStatus.CREATED)
     public void addTrip(@RequestBody AddTripRequestBody requestBody,
                         HttpServletRequest request, HttpServletResponse response) {
-        HttpSession session = request.getSession(false);
-        if (session == null) {
-            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-            return;
-        }
-        String email = (String) session.getAttribute("email");
-
-        tripService.saveTrip(requestBody.getTripName(), requestBody.getStartDate(),
-                            requestBody.getEndDate(), email);
+        if (!userService.isLoggedIn(request, response)) return;
+        String email = (String) request.getSession(false).getAttribute("email");
+        tripService.saveTrip(requestBody.getTripName(), requestBody.getStartDate(), requestBody.getEndDate(), email);
     }
 
     // 只是开发中测试用的
     @RequestMapping(value = "/trips", method = RequestMethod.GET)
     @ResponseBody
     public Set<Trip> getAllTrips(HttpServletRequest request, HttpServletResponse response) {
-        HttpSession session = request.getSession(false);
-        if (session == null) {
-            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-            return new HashSet<>();
-        }
-        String email = (String) session.getAttribute("email");
+        if (!userService.isLoggedIn(request, response)) return null;
+        String email = (String) request.getSession(false).getAttribute("email");
         User user = userService.getUserByEmail(email);
         return user.getTripSet();
     }
@@ -59,7 +48,8 @@ public class TripController {
     // 只是开发中测试用的
     @RequestMapping(value = "/trip/{trip_id}", method = RequestMethod.GET)
     @ResponseBody
-    public Trip getTrip(@PathVariable("trip_id") int tripId) {
+    public Trip getTrip(@PathVariable("trip_id") int tripId, HttpServletRequest request, HttpServletResponse response) {
+        if (!userService.isLoggedIn(request, response)) return null;
         return tripService.getTrip(tripId);
     }
 }

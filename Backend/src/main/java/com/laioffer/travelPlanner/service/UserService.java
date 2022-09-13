@@ -8,6 +8,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Service
@@ -41,5 +43,13 @@ public class UserService {
             return user.getFirstName();
         }
         return new String();
+    }
+
+    public boolean isLoggedIn(HttpServletRequest request, HttpServletResponse response) {
+        if (request.getSession(false) == null) {
+            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+            return false;
+        }
+        return true;
     }
 }
