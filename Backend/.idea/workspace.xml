@@ -10,48 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="940999f9-2929-4b99-873f-3f3b97bb1686" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/dataSources/55d70b04-4227-426d-b577-9e0a28310604.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/dataSources/55d70b04-4227-426d-b577-9e0a28310604/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/dataSources/55d70b04-4227-426d-b577-9e0a28310604/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/dataSources/55d70b04-4227-426d-b577-9e0a28310604/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/dataSources/55d70b04-4227-426d-b577-9e0a28310604/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/dataSources/55d70b04-4227-426d-b577-9e0a28310604/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2c01cf6a-94f6-4e8a-9376-258c9b52b023.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2c01cf6a-94f6-4e8a-9376-258c9b52b023.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/controller/DailyPlanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/controller/DailyPlanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/controller/PlaceEntryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/controller/PlaceEntryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/controller/TripController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/controller/TripController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laioffer/travelPlanner/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/controller/DailyPlanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/controller/DailyPlanController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/controller/PlaceEntryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/controller/PlaceEntryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/controller/TripController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/controller/TripController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/dao/PlaceEntryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/dao/PlaceEntryDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/entity/DailyPlan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/entity/DailyPlan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/entity/Trip.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/entity/Trip.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/request/AddPlaceEntryRequestBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/request/AddPlaceEntryRequestBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/service/DailyPlanService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/service/DailyPlanService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/service/PlaceEntryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/service/PlaceEntryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/laioffer/travelPlanner/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/controller/DailyPlanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/controller/DailyPlanController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/controller/PlaceEntryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/controller/PlaceEntryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/controller/TripController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/controller/TripController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/dao/PlaceEntryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/dao/PlaceEntryDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/DailyPlan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/DailyPlan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/Trip.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/Trip.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/request/AddPlaceEntryRequestBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/request/AddPlaceEntryRequestBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/service/DailyPlanService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/service/DailyPlanService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/service/PlaceEntryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/service/PlaceEntryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/service/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,6 +150,8 @@
       <workItem from="1663022201000" duration="860000" />
       <workItem from="1663035541317" duration="10168000" />
       <workItem from="1663052745212" duration="3553000" />
+      <workItem from="1663057188923" duration="25000" />
+      <workItem from="1663057257939" duration="70000" />
     </task>
     <servers />
   </component>
