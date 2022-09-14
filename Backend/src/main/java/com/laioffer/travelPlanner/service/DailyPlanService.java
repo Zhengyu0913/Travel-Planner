@@ -48,8 +48,8 @@ public class DailyPlanService {
 
     public void clearDailyPlan(int dailyPlanId) {
         DailyPlan dailyPlan = dailyPlanDAO.getDailyPlanById(dailyPlanId);
-        Set<PlaceEntry> placeEntrySet = dailyPlan.getPlaceEntrySet();
-        Iterator<PlaceEntry> i = placeEntrySet.iterator();
+        List<PlaceEntry> placeEntryList = dailyPlan.getPlaceEntryList();
+        Iterator<PlaceEntry> i = placeEntryList.iterator();
         while (i.hasNext()) {
             PlaceEntry placeEntry = i.next();
             i.remove();
@@ -59,7 +59,7 @@ public class DailyPlanService {
 
     public void clearDailyPlanByTimeBlock(int dailyPlanId, TimeBlock timeBlock) {
         DailyPlan dailyPlan = dailyPlanDAO.getDailyPlanById(dailyPlanId);
-        Set<PlaceEntry> placeEntryList = dailyPlan.getPlaceEntrySet();
+        List<PlaceEntry> placeEntryList = dailyPlan.getPlaceEntryList();
         Iterator<PlaceEntry> i = placeEntryList.iterator();
         while (i.hasNext()) {
             PlaceEntry placeEntry = i.next();
