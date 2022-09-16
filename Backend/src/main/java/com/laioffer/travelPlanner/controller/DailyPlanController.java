@@ -1,13 +1,11 @@
 package com.laioffer.travelPlanner.controller;
 
 import com.laioffer.travelPlanner.entity.DailyPlan;
-import com.laioffer.travelPlanner.entity.PlaceEntry;
 import com.laioffer.travelPlanner.entity.TimeBlock;
 import com.laioffer.travelPlanner.request.AddDailyPlanRequestBody;
 import com.laioffer.travelPlanner.service.DailyPlanService;
 import com.laioffer.travelPlanner.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 

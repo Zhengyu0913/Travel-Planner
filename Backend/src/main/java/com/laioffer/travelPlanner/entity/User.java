@@ -36,7 +36,7 @@ public class User implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy="user")
     Set<Trip> tripSet = new HashSet<>();
 
-    public Set<Trip> getTripSet() {
+    public List<Trip> getTripList() {
         return tripSet;
     }
 

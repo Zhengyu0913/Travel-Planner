@@ -37,4 +37,20 @@ public class TripDAO {
             if (session != null) session.close();
         }
     }
+
+    public void deleteTrip(Trip trip) {
+        Session session = null;
+        try {
+            session = sessionFactory.openSession();
+            session.beginTransaction();
+            session.delete(trip);
+            session.getTransaction().commit();
+        } catch (PersistenceException | IllegalStateException ex) {
+            // if hibernate throws this exception, it means the user already be signed-up
+            ex.printStackTrace();
+            session.getTransaction().rollback();
+        } finally {
+            if (session != null) session.close();
+        }
+    }
 }

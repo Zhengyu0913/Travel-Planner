@@ -5,15 +5,14 @@ import com.laioffer.travelPlanner.dao.PlaceEntryDAO;
 import com.laioffer.travelPlanner.dao.TripDAO;
 import com.laioffer.travelPlanner.entity.DailyPlan;
 import com.laioffer.travelPlanner.entity.PlaceEntry;
-import com.laioffer.travelPlanner.entity.Trip;
 import com.laioffer.travelPlanner.entity.TimeBlock;
+import com.laioffer.travelPlanner.entity.Trip;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
 @Service
 public class DailyPlanService {
