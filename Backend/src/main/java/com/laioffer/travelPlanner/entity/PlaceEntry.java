@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.hibernate.annotations.Formula;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -25,16 +26,19 @@ public class PlaceEntry implements Serializable {
     private String rapidPlaceId;
 
     @Column(name = "time_block")
-    @Enumerated(value = EnumType.STRING)
     @JsonProperty("time_block")
+    @Enumerated(EnumType.STRING)
     private TimeBlock timeBlock;
 
+    @Formula("FIELD(time_block, 'BREAKFAST', 'MORNING', 'LUNCH', 'AFTERNOON', 'DINNER', 'NIGHT', 'STAY')")
+    private String timeBlockSort;
+
     @Column(name = "latitude")
-    @JsonProperty("latitude")
+    @JsonProperty("lat")
     private double latitude;
 
     @Column(name = "longitude")
-    @JsonProperty("longitude")
+    @JsonProperty("lon")
     private double longitude;
 
     @ManyToOne

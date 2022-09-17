@@ -1,6 +1,8 @@
 package com.laioffer.travelPlanner.entity;
 
 import com.fasterxml.jackson.annotation.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -28,7 +30,9 @@ public class DailyPlan implements Serializable {
     private Trip trip;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy="dailyPlan")
-    Set<PlaceEntry> placeEntrySet = new HashSet<>();
+    @Fetch(FetchMode.SUBSELECT)
+    @OrderBy("timeBlockSort")
+    List<PlaceEntry> placeEntryList = new ArrayList<>();
 
     public Trip getTrip() {
         return trip;
@@ -38,12 +42,12 @@ public class DailyPlan implements Serializable {
         this.trip = trip;
     }
 
-    public Set<PlaceEntry> getPlaceEntrySet() {
-        return placeEntrySet;
+    public List<PlaceEntry> getPlaceEntryList() {
+        return placeEntryList;
     }
 
-    public void setPlaceEntrySet(Set<PlaceEntry> placeEntrySet) {
-        this.placeEntrySet = placeEntrySet;
+    public void setPlaceEntryList(List<PlaceEntry> placeEntryList) {
+        this.placeEntryList = placeEntryList;
     }
 
     public int getId() {
