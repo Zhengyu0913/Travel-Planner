@@ -5,13 +5,11 @@ import com.laioffer.travelPlanner.request.AddPlaceEntryRequestBody;
 import com.laioffer.travelPlanner.service.PlaceEntryService;
 import com.laioffer.travelPlanner.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 @Controller
 public class PlaceEntryController {
@@ -20,7 +18,7 @@ public class PlaceEntryController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/place", method = RequestMethod.POST)
+    @RequestMapping(value = "/api/place", method = RequestMethod.POST)
     public void addPlaceEntry(@RequestBody AddPlaceEntryRequestBody requestBody, HttpServletRequest request, HttpServletResponse response) {
         if (!userService.isLoggedIn(request, response)) return;
         placeEntryService.savePlaceEntry(requestBody.getTripId(), requestBody.getDate(),
@@ -28,14 +26,14 @@ public class PlaceEntryController {
                 requestBody.getLatitude(), requestBody.getLongitude());
     }
 
-    @RequestMapping(value = "/place/{entry_id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/place/{entry_id}", method = RequestMethod.GET)
     @ResponseBody
     public PlaceEntry getPlaceEntryByID(@PathVariable("entry_id") int entryId, HttpServletRequest request, HttpServletResponse response) {
         if (!userService.isLoggedIn(request, response)) return null;
         return placeEntryService.getPlaceEntryByID(entryId);
     }
 
-    @RequestMapping(value = "/place/{entry_id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/api/place/{entry_id}", method = RequestMethod.DELETE)
     public void deletePlaceEntryByID(@PathVariable("entry_id") int entryId, HttpServletRequest request, HttpServletResponse response) {
         if (!userService.isLoggedIn(request, response)) return;
         placeEntryService.deletePlaceEntryByID(entryId);

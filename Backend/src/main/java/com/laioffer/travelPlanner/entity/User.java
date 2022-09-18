@@ -3,13 +3,15 @@ package com.laioffer.travelPlanner.entity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.TreeSet;
 
 @Entity
 @Table(name = "Users")
@@ -34,14 +36,13 @@ public class User implements Serializable {
     private String lastName;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy="user")
-    Set<Trip> tripSet = new HashSet<>();
+    @Fetch(FetchMode.SUBSELECT)
+    List<Trip> tripList;
 
-    public Set<Trip> getTripSet() {
-        return tripSet;
-    }
+    public List<Trip> getTripList() { return tripList; }
 
-    public void setTripSet(Set<Trip> tripSet) {
-        this.tripSet = tripSet;
+    public void setTripList(List<Trip> tripList) {
+        this.tripList = tripList;
     }
 
     public String getEmail() {

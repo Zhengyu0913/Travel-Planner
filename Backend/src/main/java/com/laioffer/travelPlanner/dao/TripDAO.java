@@ -13,11 +13,11 @@ public class TripDAO {
     @Autowired
     private SessionFactory sessionFactory;
 
-    public Trip getTripByID(int tripId) {
+    public Trip getTripByID(String tripId) {
         try (Session session = sessionFactory.openSession()) {
             return session.get(Trip.class, tripId);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
         return null;
     }
@@ -29,10 +29,28 @@ public class TripDAO {
             session.beginTransaction();
             session.save(trip);
             session.getTransaction().commit();
-        } catch (PersistenceException | IllegalStateException ex) {
-            // if hibernate throws this exception, it means the user already be signed-up
+        } catch (Exception ex) {
             ex.printStackTrace();
-            session.getTransaction().rollback();
+            if (session != null) {
+                session.getTransaction().rollback();
+            }
+        } finally {
+            if (session != null) session.close();
+        }
+    }
+
+    public void deleteTrip(Trip trip) {
+        Session session = null;
+        try {
+            session = sessionFactory.openSession();
+            session.beginTransaction();
+            session.delete(trip);
+            session.getTransaction().commit();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            if (session != null) {
+                session.getTransaction().rollback();
+            }
         } finally {
             if (session != null) session.close();
         }

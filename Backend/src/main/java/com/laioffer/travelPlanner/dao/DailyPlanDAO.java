@@ -7,7 +7,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.util.Date;
+import java.util.*;
 
 @Repository
 public class DailyPlanDAO {
@@ -24,13 +24,26 @@ public class DailyPlanDAO {
         return null;
     }
 
-    public DailyPlan getDailyPlanByTripIDAndDate(int tripId, Date date) {
+    public DailyPlan getDailyPlanByTripIDAndDate(String tripId, Date date) {
         try(Session session = sessionFactory.openSession()) {
             String hql = "FROM DailyPlan p WHERE p.trip.id = :trip_id AND p.date = :date";
             Query query = session.createQuery(hql);
             query.setParameter("trip_id", tripId);
             query.setParameter("date", date);
             return (DailyPlan) query.getSingleResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    // by Rachel
+    public List<DailyPlan> getDailyPlanByTripID(String tripId) {
+        try(Session session = sessionFactory.openSession()) {
+            String hql = "FROM DailyPlan p WHERE p.trip.id = :trip_id";
+            Query query = session.createQuery(hql);
+            query.setParameter("trip_id", tripId);
+            return (List<DailyPlan>) query.getResultList();
         } catch (Exception e) {
             e.printStackTrace();
         }

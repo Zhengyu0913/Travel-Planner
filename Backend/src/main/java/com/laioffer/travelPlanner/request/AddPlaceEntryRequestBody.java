@@ -8,7 +8,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Date;
 
 public class AddPlaceEntryRequestBody {
-    private final int tripId;
+    private final String tripId;
     private final Date date;
     private final TimeBlock timeBlock;
     private final String rapidPlaceId;
@@ -16,7 +16,7 @@ public class AddPlaceEntryRequestBody {
     private final double longitude;
 
     @JsonCreator
-    public AddPlaceEntryRequestBody(@JsonProperty("trip_id") int tripId,
+    public AddPlaceEntryRequestBody(@JsonProperty("trip_id") String tripId,
                                     @JsonProperty("date") @DateTimeFormat(pattern="yyyy-MM-dd") Date date,
                                     @JsonProperty("time_block") TimeBlock timeBlock,
                                     @JsonProperty("rapid_place_id") String rapidPlaceId,
@@ -30,7 +30,7 @@ public class AddPlaceEntryRequestBody {
         this.longitude = longitude;
     }
 
-    public int getTripId() {
+    public String getTripId() {
         return tripId;
     }
 
