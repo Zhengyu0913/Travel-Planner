@@ -18,7 +18,7 @@ public class PlaceEntryController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/place", method = RequestMethod.POST)
+    @RequestMapping(value = "/api/place", method = RequestMethod.POST)
     public void addPlaceEntry(@RequestBody AddPlaceEntryRequestBody requestBody, HttpServletRequest request, HttpServletResponse response) {
         if (!userService.isLoggedIn(request, response)) return;
         placeEntryService.savePlaceEntry(requestBody.getTripId(), requestBody.getDate(),
@@ -26,14 +26,14 @@ public class PlaceEntryController {
                 requestBody.getLatitude(), requestBody.getLongitude());
     }
 
-    @RequestMapping(value = "/place/{entry_id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/place/{entry_id}", method = RequestMethod.GET)
     @ResponseBody
     public PlaceEntry getPlaceEntryByID(@PathVariable("entry_id") int entryId, HttpServletRequest request, HttpServletResponse response) {
         if (!userService.isLoggedIn(request, response)) return null;
         return placeEntryService.getPlaceEntryByID(entryId);
     }
 
-    @RequestMapping(value = "/place/{entry_id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/api/place/{entry_id}", method = RequestMethod.DELETE)
     public void deletePlaceEntryByID(@PathVariable("entry_id") int entryId, HttpServletRequest request, HttpServletResponse response) {
         if (!userService.isLoggedIn(request, response)) return;
         placeEntryService.deletePlaceEntryByID(entryId);

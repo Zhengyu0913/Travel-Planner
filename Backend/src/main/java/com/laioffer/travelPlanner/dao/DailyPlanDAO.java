@@ -24,7 +24,7 @@ public class DailyPlanDAO {
         return null;
     }
 
-    public DailyPlan getDailyPlanByTripIDAndDate(int tripId, Date date) {
+    public DailyPlan getDailyPlanByTripIDAndDate(String tripId, Date date) {
         try(Session session = sessionFactory.openSession()) {
             String hql = "FROM DailyPlan p WHERE p.trip.id = :trip_id AND p.date = :date";
             Query query = session.createQuery(hql);
@@ -38,7 +38,7 @@ public class DailyPlanDAO {
     }
 
     // by Rachel
-    public List<DailyPlan> getDailyPlanByTripID(int tripId) {
+    public List<DailyPlan> getDailyPlanByTripID(String tripId) {
         try(Session session = sessionFactory.openSession()) {
             String hql = "FROM DailyPlan p WHERE p.trip.id = :trip_id";
             Query query = session.createQuery(hql);

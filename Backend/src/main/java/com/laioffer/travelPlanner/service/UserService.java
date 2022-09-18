@@ -20,14 +20,6 @@ public class UserService {
         return userDAO.getUserByEmail(email);
     }
 
-    //
-//    public User getUserFromContext() {
-//        Authentication loggedInUser = SecurityContextHolder.getContext().getAuthentication();
-//        String email = loggedInUser.getName();
-//        User user = getUserByEmail(email);
-//        return user;
-//    }
-
     public boolean saveUser(User user) throws IOException {
         user.setPassword(Util.encryptPassword(user.getEmail(), user.getPassword()));
         return userDAO.saveUser(user);

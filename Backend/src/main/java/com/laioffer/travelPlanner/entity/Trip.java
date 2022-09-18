@@ -1,6 +1,8 @@
 package com.laioffer.travelPlanner.entity;
 
 import com.fasterxml.jackson.annotation.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,9 +16,8 @@ public class Trip implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @JsonProperty("trip_id")
-    private int id;
+    private String id;
 
     @Column(name = "trip_name")
     @JsonProperty("trip_name")
@@ -38,6 +39,8 @@ public class Trip implements Serializable {
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy="trip")
+    @Fetch(FetchMode.SUBSELECT)
+    @JsonIgnore
     List<DailyPlan> dailyPlanList = new ArrayList<>();
 
     public User getUser() {
@@ -56,11 +59,11 @@ public class Trip implements Serializable {
         this.dailyPlanList = dailyPlanList;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int tripId) {
+    public void setId(String tripId) {
         this.id = tripId;
     }
 

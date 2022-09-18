@@ -24,7 +24,7 @@ public class DailyPlanService {
     @Autowired
     private PlaceEntryDAO placeEntryDAO;
 
-    public void saveDailyPlan(int tripId, Date date) {
+    public void saveDailyPlan(String tripId, Date date) {
         Trip trip = tripDAO.getTripByID(tripId);
 
         // trip might be null

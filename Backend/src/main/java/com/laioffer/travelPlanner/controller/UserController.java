@@ -21,10 +21,11 @@ import java.io.IOException;
 public class UserController {
     @Autowired
     private UserService userService;
-    private ObjectMapper objectMapper = new ObjectMapper();
 
-    @RequestMapping(value = "/signin", method = RequestMethod.POST)
-    public void signIn(@RequestBody SignInRequestBody requestBody, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @RequestMapping(value = "/api/signin", method = RequestMethod.POST)
+    public void signIn(@RequestBody SignInRequestBody requestBody,
+                       HttpServletRequest request,
+                       HttpServletResponse response) throws IOException {
         String firstname = userService.verifyUser(requestBody.getEmail(), requestBody.getPassword());
 
         // Create a new session for the user if user email and password are correct, otherwise return Unauthorized error.
@@ -42,7 +43,7 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/signout", method = RequestMethod.POST)
+    @RequestMapping(value = "/api/signout", method = RequestMethod.POST)
     public void signOut(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession(false);
         if (session != null) {
@@ -54,7 +55,7 @@ public class UserController {
         response.addCookie(cookie);
     }
 
-    @RequestMapping(value = "/signup", method = RequestMethod.POST)
+    @RequestMapping(value = "/api/signup", method = RequestMethod.POST)
     public void signUp(@RequestBody User user, HttpServletResponse response) throws IOException {
         if (!userService.saveUser(user)) {
             response.setStatus(HttpServletResponse.SC_CONFLICT);

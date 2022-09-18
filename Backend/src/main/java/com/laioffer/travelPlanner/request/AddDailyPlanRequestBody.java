@@ -7,17 +7,17 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Date;
 
 public class AddDailyPlanRequestBody {
-    private final int tripId;
+    private final String tripId;
     private final Date date;
 
     @JsonCreator
-    public AddDailyPlanRequestBody(@JsonProperty("trip_id") int tripId,
+    public AddDailyPlanRequestBody(@JsonProperty("trip_id") String tripId,
                                    @JsonProperty("date") @DateTimeFormat(pattern="yyyy-MM-dd") Date date) {
         this.tripId = tripId;
         this.date = date;
     }
 
-    public int getTripId() {
+    public String getTripId() {
         return tripId;
     }
 

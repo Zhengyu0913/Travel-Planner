@@ -17,7 +17,7 @@ public class PlaceEntryService {
     @Autowired
     private DailyPlanDAO dailyPlanDao;
 
-    public void savePlaceEntry(int tripId, Date date, String rapidPlaceId, TimeBlock timeBlock,
+    public void savePlaceEntry(String tripId, Date date, String rapidPlaceId, TimeBlock timeBlock,
                                double latitude, double longitude) {
         DailyPlan dailyPlan = dailyPlanDao.getDailyPlanByTripIDAndDate(tripId, date);
 
