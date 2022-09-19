@@ -21,6 +21,10 @@ public class PlaceEntry implements Serializable {
     @JsonProperty("place_entry_id")
     private int id;
 
+    @Column(name = "place_entry_name")
+    @JsonProperty("place_entry_name")
+    private String placeEntryName;
+
     @Column(name = "rapid_place_id")
     @JsonProperty("rapid_place_id")
     private String rapidPlaceId;
@@ -38,7 +42,7 @@ public class PlaceEntry implements Serializable {
     private double latitude;
 
     @Column(name = "longitude")
-    @JsonProperty("lon")
+    @JsonProperty("lng")
     private double longitude;
 
     @ManyToOne
@@ -88,4 +92,16 @@ public class PlaceEntry implements Serializable {
     public void setLongitude(Double longitude) {
         this.longitude = longitude;
     }
+
+    public String getPlaceEntryName() { return placeEntryName; }
+
+    public void setPlaceEntryName(String placeEntryName) { this.placeEntryName = placeEntryName; }
+
+    public String getTimeBlockSort() { return timeBlockSort; }
+
+    public void setTimeBlockSort(String timeBlockSort) { this.timeBlockSort = timeBlockSort; }
+
+    public void setLatitude(double latitude) { this.latitude = latitude; }
+
+    public void setLongitude(double longitude) { this.longitude = longitude; }
 }

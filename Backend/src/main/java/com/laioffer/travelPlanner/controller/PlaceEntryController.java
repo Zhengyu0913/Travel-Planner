@@ -21,8 +21,8 @@ public class PlaceEntryController {
     @RequestMapping(value = "/api/place", method = RequestMethod.POST)
     public void addPlaceEntry(@RequestBody AddPlaceEntryRequestBody requestBody, HttpServletRequest request, HttpServletResponse response) {
         if (!userService.isLoggedIn(request, response)) return;
-        placeEntryService.savePlaceEntry(requestBody.getTripId(), requestBody.getDate(),
-                requestBody.getRapidPlaceId(), requestBody.getTimeBlock(),
+        placeEntryService.savePlaceEntry(requestBody.getTripId(), requestBody.getPlaceEntryName(),
+                requestBody.getDate(), requestBody.getRapidPlaceId(), requestBody.getTimeBlock(),
                 requestBody.getLatitude(), requestBody.getLongitude());
     }
 
