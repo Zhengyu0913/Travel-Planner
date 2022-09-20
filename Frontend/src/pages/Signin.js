@@ -97,7 +97,7 @@ export default function SignIn() {
     })
       .then((res) => {
         if (res.ok) {
-          return res.json();
+          return res;
         } else {
           return res.json().then((data) => {
             let errorMessage = "Authentication failed!";
@@ -109,9 +109,9 @@ export default function SignIn() {
         }
       })
       .then((data) => {
-        console.log(data);
-        authCtx.login(data.idToken);
-        navigate("/");
+        console.log(data.type);
+        authCtx.login(data.type);
+        navigate("/explore");
       })
       .catch((err) => {
         alert(err.message);

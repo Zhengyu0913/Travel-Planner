@@ -25,9 +25,10 @@ export default function TripSelect(props) {
           onChange={handleChange}
         >
           {props.curTrips?.map((item, index) => {
+            console.log(item);
             return (
-              <MenuItem key={index} value={item.name}>
-                {item.name}
+              <MenuItem key={index} value={item.trip_id}>
+                {item.trip_name}
               </MenuItem>
             );
           })}

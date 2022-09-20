@@ -154,6 +154,8 @@ const List = ({
                   selected={Number(childClicked) === i}
                   placeName={place.name}
                   placeId={place.xid}
+                  placeLat={place.point.lat}
+                  placeLng={place.point.lon}
                   availableTrips={availableTrips}
                   addTrip={addTrip}
                   deleteTrip={deleteTrip}

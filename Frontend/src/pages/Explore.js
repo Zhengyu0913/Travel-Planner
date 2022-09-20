@@ -1,11 +1,18 @@
 import { Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import ListPlace from "../components/ListPlace";
 import Map from "../components/Map/Map";
 import { getPlacesData } from "../components/utils";
+import { getAllDate } from "../components/utils/getAllDate";
 import { getPlaceDetails } from "../components/utils/getPlaceDetails";
 
-export default function Explore(props) {
+export default function Explore({
+  curTrips,
+  onAddTrip,
+  onDeleteTrip,
+  setTrips,
+}) {
   const [places, setPlaces] = useState([]);
   const [autocomplete, setAutocomplete] = useState(null);
   const [coords, setCoords] = useState({});
@@ -28,6 +35,49 @@ export default function Explore(props) {
 
   //   setFilteredPlaces(filtered);
   // }, [type]);
+  const navigate = useNavigate();
+  useEffect(() => {
+    fetch("/api/trips", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        console.log(res);
+        if (res.ok) {
+          return res.json();
+        } else {
+          return res.json().then((data) => {
+            let errorMessage = "Get trips failed!";
+            if (data && data.error && data.error.message) {
+              errorMessage = data.error.message;
+            }
+            throw new Error(errorMessage);
+          });
+        }
+      })
+      .then((data) => {
+        const newData = data.map((item) => {
+          const dateArr = getAllDate(item.start_date, item.end_date);
+
+          return {
+            trip_id: item.trip_id,
+            trip_name: item.trip_name,
+            date: dateArr,
+          };
+        });
+        console.log(newData);
+        setTrips(newData);
+
+        // navigate("/explore");
+      })
+      .catch((err) => {
+        // alert(err.message);
+        console.log(err);
+        navigate("/signin");
+      });
+  }, [setTrips, navigate]);
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       ({ coords: { latitude, longitude } }) => {
@@ -85,9 +135,9 @@ export default function Explore(props) {
           onLoad={onLoad}
           places={filteredPlaces.length ? filteredPlaces : places}
           setPlaces={setPlaces}
-          availableTrips={props.curTrips}
-          addTrip={props.onAddTrip}
-          deleteTrip={props.onDeleteTrip}
+          availableTrips={curTrips}
+          addTrip={onAddTrip}
+          deleteTrip={onDeleteTrip}
           isLoading={isLoading}
           childClicked={childClicked}
           type={type}

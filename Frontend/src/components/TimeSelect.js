@@ -24,9 +24,13 @@ export default function TimeSelect(props) {
           label="Time"
           onChange={handleChange}
         >
-          <MenuItem value={"breakfirst"}>Breakfirst</MenuItem>
-          <MenuItem value={"lunch"}>Lunch</MenuItem>
-          <MenuItem value={"dinner"}>Dinner</MenuItem>
+          <MenuItem value={"BREAKFAST"}>Breakfast</MenuItem>
+          <MenuItem value={"LUNCH"}>Lunch</MenuItem>
+          <MenuItem value={"DINNER"}>Dinner</MenuItem>
+          <MenuItem value={"MORNING"}>Morning</MenuItem>
+          <MenuItem value={"AFTERNOON"}>Afternoon</MenuItem>
+          <MenuItem value={"NIGHT"}>Night</MenuItem>
+          <MenuItem value={"STAY"}>Stay</MenuItem>
         </Select>
       </FormControl>
     </Box>

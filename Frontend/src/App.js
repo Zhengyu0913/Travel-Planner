@@ -1,10 +1,12 @@
-import { BorderStyleTwoTone } from "@mui/icons-material";
 import { Box } from "@mui/material";
 
 import { useEffect, useState } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import Layout from "./components/Layout";
-import { getAllTrips } from "./components/utils/getAllTrips";
+import { addTripToBackend } from "./components/utils/addTripToBackend";
+import { deleteTrip } from "./components/utils/deleteTrip";
+import { getAllDate } from "./components/utils/getAllDate";
+
 import ActivityDetail from "./pages/ActivityDetail";
 import Explore from "./pages/Explore";
 import Home from "./pages/Home";
@@ -16,51 +18,51 @@ import Trips from "./pages/Trips";
 
 function App(props) {
   const [place, setPlace] = useState("");
-  const [trips, setTrips] = useState([
-    { id: 1, name: "Boston", date: ["2022-09-06", "2022-09-07", "2022-09-08"] },
-    {
-      id: 2,
-      name: "Chicago",
-      date: ["2022-09-12", "2022-09-13", "2022-09-14"],
-    },
-  ]);
-  // const navigate = useNavigate();
-  // useEffect(() => {
-  //   fetch("/api/getalltrips", {
-  //     method: "GET",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   })
-  //     .then((res) => {
-  //       console.log(res);
-  //       if (res.ok) {
-  //         return res.json();
-  //       } else {
-  //         return res.json().then((data) => {
-  //           let errorMessage = "Get trips failed!";
-  //           if (data && data.error && data.error.message) {
-  //             errorMessage = data.error.message;
-  //           }
-  //           throw new Error(errorMessage);
-  //         });
-  //       }
-  //     })
-  //     .then((data) => {
-  //       setTrips(data);
-  //       navigate("/explore");
-  //     })
-  //     .catch((err) => {
-  //       alert(err.message);
-  //       console.log(err);
-  //       navigate("/signin");
-  //     });
-  // }, []);
+  const [trips, setTrips] = useState([]);
+
   const addTripHandler = (item) => {
+    //向后端发送post请求
+    addTripToBackend({
+      trip_id: item.trip_id,
+      trip_name: item.trip_name,
+      start_date: item.date[0],
+      end_date: item.date[item.date.length - 1],
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res;
+        } else {
+          return res.then((data) => {
+            let errorMessage = "Add trip failed!";
+            throw new Error(errorMessage);
+          });
+        }
+      })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
+    console.log(
+      JSON.stringify({
+        trip_id: item.trip_id,
+        trip_name: item.trip_name,
+        start_date: item.date[0],
+        end_date: item.date[item.date.length - 1],
+      })
+    ); //发送给后端
     setTrips((prevTrips) => prevTrips.concat(item));
   };
   const deleteTripHandler = (id) => {
-    setTrips((prevTrips) => prevTrips.filter((item) => item.id !== id));
+    //向后端发送delete 请求
+    deleteTrip(id).then((data) => {
+      console.log(data);
+      // if (data.status === "200") {
+      //   alert("Delete successfull");
+      // }
+    });
+    setTrips((prevTrips) => prevTrips.filter((item) => item.trip_id !== id));
   };
   const placeHandler = (value) => {
     console.log(value);
@@ -97,6 +99,7 @@ function App(props) {
                 curTrips={trips}
                 onAddTrip={addTripHandler}
                 onDeleteTrip={deleteTripHandler}
+                setTrips={setTrips}
               ></Explore>
             }
           ></Route>
@@ -120,6 +123,7 @@ function App(props) {
                 curTrips={trips}
                 onAddTrip={addTripHandler}
                 onDeleteTrip={deleteTripHandler}
+                setTrips={setTrips}
               ></Trips>
             }
           ></Route>

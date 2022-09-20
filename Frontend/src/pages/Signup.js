@@ -23,7 +23,7 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { AuthContext } from "../context/auth-context";
 import { Paper } from "@mui/material";
-import {message} from "antd";
+import { message } from "antd";
 
 function Copyright(props) {
   return (
@@ -117,7 +117,7 @@ export default function SignUp() {
       return;
     }
 
-    fetch("/signup", {
+    fetch("/api/signup", {
       method: "POST",
       body: JSON.stringify({
         first_name: firstNameInput,
@@ -131,7 +131,7 @@ export default function SignUp() {
     })
       .then((res) => {
         if (res.status < 200 || res.status >= 300) {
-          throw Error("Failed to sign up")
+          throw Error("Failed to sign up");
         }
       })
       .then((data) => {

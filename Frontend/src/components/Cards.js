@@ -23,7 +23,7 @@ import {
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { AuthContext } from "../context/auth-context";
 import { useNavigate } from "react-router-dom";
-import { getAllTrips } from "./utils/getAllTrips";
+
 import { addTripToBackend } from "./utils/addTripToBackend";
 import { addDailyPlanToBackend } from "./utils/addDailyPlanToBackend";
 
@@ -41,6 +41,8 @@ export default function Cards({
   addressState,
   addressCountry,
   addressCity,
+  placeLat,
+  placeLng,
 }) {
   if (selected)
     refProp?.current?.scrollIntoView({
@@ -66,13 +68,30 @@ export default function Cards({
     setCurrentSelectedDate(v);
   };
   const tripChangeHandler = (v) => {
+    console.log(v);
     setCurrentSelectedTrip(v);
   };
   const DateFromChangeHandler = (v) => {
-    setTripFrom(`${String(v.$y)}-${String(v.$M + 1)}-${String(v.$D)}`);
+    let newM = `${String(v.$M + 1)}`;
+    let newD = `${String(v.$D)}`;
+    if (v.$M + 1 <= 9) {
+      newM = "0" + `${String(v.$M + 1)}`;
+    }
+    if (v.$D <= 9) {
+      newD = "0" + `${String(v.$D)}`;
+    }
+    setTripFrom(`${String(v.$y)}-${newM}-${newD}`);
   };
   const DateToChangeHandler = (v) => {
-    setTripTo(`${v.$y}-${v.$M + 1}-${v.$D}`);
+    let newM = `${String(v.$M + 1)}`;
+    let newD = `${String(v.$D)}`;
+    if (v.$M + 1 <= 9) {
+      newM = "0" + `${String(v.$M + 1)}`;
+    }
+    if (v.$D <= 9) {
+      newD = "0" + `${String(v.$D)}`;
+    }
+    setTripTo(`${String(v.$y)}-${newM}-${newD}`);
   };
 
   const titleChangeHandler = (e) => {
@@ -80,56 +99,43 @@ export default function Cards({
     setTripName(e.target.value);
   };
   const confirmAddTripHandler = () => {
+    console.log(tripFrom, tripTo);
     const dateArr = getAllDate(tripFrom, tripTo);
     console.log(dateArr);
+    const tripId = Math.floor(Math.random() * 100000);
+    addTrip({ trip_id: tripId, trip_name: tripName, date: dateArr });
 
-    addTrip({ name: tripName, date: dateArr });
-    // addTripToBackend({ name: tripName, date: dateArr })
-    //   .then((res) => {
-    //     if (res.ok) {
-    //       return res.json();
-    //     } else {
-    //       return res.json().then((data) => {
-    //         let errorMessage = "Add trip failed!";
-    //         throw new Error(errorMessage);
-    //       });
-    //     }
-    //   })
-    //   .then((data) => {
-    //     console.log(data);
-    //   })
-    //   .catch((err) => {
-    //     alert(err.message);
-    //   });
     console.log(JSON.stringify({ name: tripName, date: dateArr })); //发送给后端
     setOpen(false);
   };
 
   const confirmAddDailyPlanHandler = () => {
     const dailyPlan = {
-      tripName: currentSelectedTrip,
-      placeName: placeName,
-      placeId: placeId,
-      day: currentSelectedDate,
-      timeSlot: currentSelectedTimeSlot,
+      trip_id: currentSelectedTrip,
+      place_entry_name: placeName,
+      rapid_place_id: placeId,
+      date: currentSelectedDate,
+      time_block: currentSelectedTimeSlot,
+      latitude: placeLat,
+      longitude: placeLng,
     };
-    // addDailyPlanToBackend(dailyPlan)
-    //   .then((res) => {
-    //     if (res.ok) {
-    //       return res.json();
-    //     } else {
-    //       return res.json().then((data) => {
-    //         let errorMessage = "Add trip failed!";
-    //         throw new Error(errorMessage);
-    //       });
-    //     }
-    //   })
-    //   .then((data) => {
-    //     console.log(data);
-    //   })
-    //   .catch((err) => {
-    //     alert(err.message);
-    //   });
+    addDailyPlanToBackend(dailyPlan)
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          return res.json().then((data) => {
+            let errorMessage = "Add trip failed!";
+            throw new Error(errorMessage);
+          });
+        }
+      })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
     console.log(JSON.stringify(dailyPlan)); //发送给后端
     setOpenDailyPlan(false);
   };

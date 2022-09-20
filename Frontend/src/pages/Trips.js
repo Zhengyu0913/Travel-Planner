@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
@@ -16,13 +16,55 @@ import TripCards from "../components/TripCards";
 import Box from "@mui/material/Box";
 import FlightIcon from "@mui/icons-material/Flight";
 import AddIcon from "@mui/icons-material/Add";
-import { Grid, Typography } from "@mui/material";
-export default function Trips(props) {
+import { Grid, grid2Classes, Typography } from "@mui/material";
+export default function Trips({ onAddTrip, curTrips, setTrips, onDeleteTrip }) {
   const [open, setOpen] = useState(false);
   const [tripName, setTripName] = React.useState("");
   const [tripFrom, setTripFrom] = React.useState("");
   const [tripTo, setTripTo] = React.useState("");
+  const navigate = useNavigate();
+  useEffect(() => {
+    fetch("/api/trips", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        console.log(res);
+        if (res.ok) {
+          return res.json();
+        } else {
+          return res.json().then((data) => {
+            let errorMessage = "Get trips failed!";
+            if (data && data.error && data.error.message) {
+              errorMessage = data.error.message;
+            }
+            throw new Error(errorMessage);
+          });
+        }
+      })
+      .then((data) => {
+        const newData = data.map((item) => {
+          const dateArr = getAllDate(item.start_date, item.end_date);
 
+          return {
+            trip_id: item.trip_id,
+            trip_name: item.trip_name,
+            date: dateArr,
+          };
+        });
+        console.log(newData);
+        setTrips(newData);
+
+        // navigate("/explore");
+      })
+      .catch((err) => {
+        // alert(err.message);
+        console.log(err);
+        navigate("/signin");
+      });
+  }, [setTrips, navigate]);
   const openAddNewTrip = () => {
     setOpen(true);
     console.log("New trip modal open!");
@@ -35,45 +77,34 @@ export default function Trips(props) {
     setTripName(e.target.value);
   };
   const DateFromChangeHandler = (v) => {
-    setTripFrom(`${String(v.$y)}-${String(v.$M + 1)}-${String(v.$D)}`);
+    let newM = `${String(v.$M + 1)}`;
+    let newD = `${String(v.$D)}`;
+    if (v.$M + 1 <= 9) {
+      newM = "0" + `${String(v.$M + 1)}`;
+    }
+    if (v.$D <= 9) {
+      newD = "0" + `${String(v.$D)}`;
+    }
+    setTripFrom(`${String(v.$y)}-${newM}-${newD}`);
   };
   const DateToChangeHandler = (v) => {
-    setTripTo(`${v.$y}-${v.$M + 1}-${v.$D}`);
+    let newM = `${String(v.$M + 1)}`;
+    let newD = `${String(v.$D)}`;
+    if (v.$M + 1 <= 9) {
+      newM = "0" + `${String(v.$M + 1)}`;
+    }
+    if (v.$D <= 9) {
+      newD = "0" + `${String(v.$D)}`;
+    }
+    setTripTo(`${String(v.$y)}-${newM}-${newD}`);
   };
   const confirmAddTripHandler = () => {
+    console.log(tripFrom, tripTo);
     const dateArr = getAllDate(tripFrom, tripTo);
+    console.log(dateArr);
     const tripId = Math.floor(Math.random() * 100000);
-    props.onAddTrip({ id: tripId, name: tripName, date: dateArr });
-    // addTripToBackend({
-    //   id: tripId,
-    //   name: tripName,
-    //   start: tripFrom,
-    //   end: tripTo,
-    // })
-    //   .then((res) => {
-    //     if (res.ok) {
-    //       return res.json();
-    //     } else {
-    //       return res.json().then((data) => {
-    //         let errorMessage = "Add trip failed!";
-    //         throw new Error(errorMessage);
-    //       });
-    //     }
-    //   })
-    //   .then((data) => {
-    //     console.log(data);
-    //   })
-    //   .catch((err) => {
-    //     alert(err.message);
-    //   });
-    console.log(
-      JSON.stringify({
-        id: tripId,
-        name: tripName,
-        start: tripFrom,
-        end: tripTo,
-      })
-    ); //发送给后端
+    onAddTrip({ trip_id: tripId, trip_name: tripName, date: dateArr });
+
     setOpen(false);
   };
   return (
@@ -115,12 +146,12 @@ export default function Trips(props) {
           spacing={{ xs: 2, md: 3 }}
           columns={{ xs: 4, sm: 8, md: 12 }}
         >
-          {props.curTrips?.map((item, index) => (
+          {curTrips?.map((item, index) => (
             <Grid item xs={2} sm={4} md={4} key={index}>
               <TripCards
                 key={index}
-                tripId={item.id}
-                onDeleteTrip={props.onDeleteTrip}
+                tripId={item.trip_id}
+                onDeleteTrip={onDeleteTrip}
                 curItem={item}
               ></TripCards>
             </Grid>

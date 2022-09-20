@@ -46,15 +46,20 @@ export default function DailyPlanTabs(props) {
           scrollButtons="auto"
           aria-label="scrollable auto tabs example"
         >
-          {props.days.map((day, index) => (
+          {props.days?.map((day, index) => (
             <Tab key={index} label={day} {...a11yProps(index)}></Tab>
           ))}
         </Tabs>
       </Box>
 
-      {props.plans.map((plan, index) => (
+      {props.plans?.map((plan, index) => (
         <TabPanel value={value} index={index} key={index}>
-          <TabContent key={index} plan={plan} onDelete={props.onDelete} getCoords={props.getCoords}></TabContent>
+          <TabContent
+            key={index}
+            plan={plan}
+            onDelete={props.onDelete}
+            getCoords={props.getCoords}
+          ></TabContent>
         </TabPanel>
       ))}
     </Box>

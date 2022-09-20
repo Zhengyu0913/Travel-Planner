@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Box, Container } from "@mui/material";
 import HeaderLeft from "./HeaderLeft";
@@ -29,6 +29,8 @@ import PaymentIcon from "@mui/icons-material/Payment";
 
 import HelpCenterIcon from "@mui/icons-material/HelpCenter";
 import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
+import { AuthContext } from "../context/auth-context";
+import { signOut } from "./utils/signOut";
 const pages = [
   { name: "Home", path: "/explore", icon: <HomeIcon></HomeIcon>, id: 0 },
 
@@ -69,12 +71,6 @@ const pages = [
     icon: <HelpCenterIcon></HelpCenterIcon>,
     id: 6,
   },
-  {
-    name: "Sign Out",
-    path: "/signout",
-    icon: <LogoutIcon></LogoutIcon>,
-    id: 7,
-  },
 ];
 const dFlex = {
   display: "flex",
@@ -98,7 +94,14 @@ export default function Layout() {
   const [input, setInput] = useState("");
   const [openDrawer, setOpenDrawer] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(null);
-
+  const authCtx = useContext(AuthContext);
+  const logOutHandler = () => {
+    authCtx.logout();
+    signOut().then((res) => {
+      console.log(res);
+    });
+    setOpenDrawer(false);
+  };
   const handleListItemClick = (index) => {
     setSelectedIndex(index);
     setOpenDrawer(false);
@@ -191,6 +194,20 @@ export default function Layout() {
               </div>
             );
           })}
+          <ListItemButton onClick={logOutHandler}>
+            <ListItemIcon>
+              <LogoutIcon></LogoutIcon>
+            </ListItemIcon>
+            <ListItemText
+              primaryTypographyProps={{
+                fontSize: "20px",
+                fontWeight: "bold",
+              }}
+              primary="Sign Out"
+            ></ListItemText>
+          </ListItemButton>
+
+          <Divider></Divider>
         </List>
       </Drawer>
     </>

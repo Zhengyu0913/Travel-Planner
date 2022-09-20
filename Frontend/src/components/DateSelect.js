@@ -10,7 +10,7 @@ export default function DateSelect(props) {
   let dates = [];
 
   for (let i = 0; i < trips.length; i++) {
-    if (trips[i].name === props.curSelectedTrip) {
+    if (trips[i].trip_id === props.curSelectedTrip) {
       dates = [...trips[i].date];
     }
   }

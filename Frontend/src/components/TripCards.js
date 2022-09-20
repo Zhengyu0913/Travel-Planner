@@ -17,6 +17,7 @@ const Img = styled("img")({
 
 export default function TripCards(props) {
   const deleteTrip = () => {
+    console.log(props.tripId);
     props.onDeleteTrip(props.tripId);
   };
 
@@ -33,7 +34,7 @@ export default function TripCards(props) {
     >
       <Grid container spacing={2}>
         <Box
-          key={props.curItem.id}
+          key={props.curItem.trip_id}
           sx={{
             textDecoration: "none",
             underline: "none",
@@ -55,7 +56,7 @@ export default function TripCards(props) {
           <Grid item xs container direction="column" spacing={2}>
             <Grid item xs>
               <Typography gutterBottom variant="subtitle1" component="div">
-                {props.curItem.name}
+                {props.curItem.trip_name}
               </Typography>
               <Typography variant="body2" gutterBottom>
                 {props.curItem.date[0] +
@@ -63,7 +64,7 @@ export default function TripCards(props) {
                   props.curItem.date[props.curItem.date.length - 1]}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                ID: {props.curItem.id}
+                ID: {props.curItem.trip_id}
               </Typography>
             </Grid>
             <Grid item>

@@ -7,100 +7,42 @@ import IconButton from "@mui/material/IconButton";
 import { Grid } from "@mui/material";
 import DailyPlanTabs from "../components/DailyPlanTabs";
 import TripDetailMap from "../components/Map/TripDetailMap";
-const dummyTripDetail = {
-  tripname: "Boston",
-  dailyplans: [
-    {
-      date: "09-01-2022",
-      plan: [
-        {
-          placeId: "1",
-          placeName: "xxx Hotel",
-          timeSlot: "lunch",
-          point: { lat: 34.06178665161133, lng: -117.82377624511719 },
-        },
-        {
-          placeId: "2",
-          placeName: "xxx Restaraunt",
-          timeSlot: "dinner",
-          point: { lat: 34.16178665161133, lng: -117.12377624511719 },
-        },
-      ],
-    },
-    {
-      date: "09-02-2022",
-      plan: [
-        {
-          placeId: "3",
-          placeName: "xxx Hotel",
-          timeSlot: "dinner",
-          point: { lat: 34.26178665161133, lng: -117.22377624511719 },
-        },
-        {
-          placeId: "4",
-          placeName: "xxx Restaraunt",
-          timeSlot: "dinner",
-          point: { lat: 34.36178665161133, lng: -117.32377624511719 },
-        },
-        {
-          placeId: "5",
-          placeName: "xxx Hotel",
-          timeSlot: "lunch",
-          point: { lat: 34.26178665161133, lng: -117.22377624511719 },
-        },
-        {
-          placeId: "6",
-          placeName: "xxx parking",
-          timeSlot: "breakfast",
-          point: { lat: 34.26178665161133, lng: -117.22377624511719 },
-        },
-      ],
-    },
-    {
-      date: "09-03-2022",
-      plan: [
-        {
-          placeId: "7",
-          placeName: "xxx Hotel",
-          timeSlot: "lunch",
-          point: { lat: 34.46178665161133, lng: -117.42377624511719 },
-        },
-        {
-          placeId: "8",
-          placeName: "xxx Restaraunt",
-          timeSlot: "dinner",
-          point: { lat: 34.56178665161133, lng: -117.52377624511719 },
-        },
-      ],
-    },
-  ],
-};
+
 export default function TripDetail() {
-  const [tripDetail, setTripDetail] = useState(dummyTripDetail); //在useEffect里面call 后端api拿到trip detail
+  const [tripDetail, setTripDetail] = useState({}); //在useEffect里面call 后端api拿到trip detail
   const [coords, setCoords] = useState({});
   const [places, setPlaces] = useState([]);
   const param = useParams();
   const currentTrip = param.detail;
+  // console.log(currentTrip);
+
   const deleteTrip = (id) => {
+    //发送delete请求
     if (window.confirm(`Are you sure you want to delete it?`)) {
       setTripDetail((prevTrips) => {
         const updateTrip = [];
-        for (let i = 0; i < prevTrips.dailyplans.length; i++) {
+        for (let i = 0; i < prevTrips.daily_plans.length; i++) {
           const updateDailyPlan = [];
-          for (let j = 0; j < prevTrips.dailyplans[i].plan.length; j++) {
-            if (prevTrips.dailyplans[i].plan[j].placeId !== id) {
-              updateDailyPlan.push(prevTrips.dailyplans[i].plan[j]);
+          for (
+            let j = 0;
+            j < prevTrips.daily_plans[i].placeEntryList.length;
+            j++
+          ) {
+            if (
+              prevTrips.daily_plans[i].placeEntryList[j].place_entry_id !== id
+            ) {
+              updateDailyPlan.push(prevTrips.daily_plans[i].placeEntryList[j]);
             }
           }
           const updateTripDetail = {
-            date: prevTrips.dailyplans[i].date,
-            plan: updateDailyPlan,
+            daily_plan_date: prevTrips.daily_plans[i].daily_plan_date,
+            placeEntryList: updateDailyPlan,
           };
           updateTrip.push(updateTripDetail);
         }
         const updateWholeTrip = {
-          tripname: prevTrips.tripname,
-          dailyplans: updateTrip,
+          trip_name: prevTrips.trip_name,
+          daily_plans: updateTrip,
         };
         console.log(updateWholeTrip);
         return updateWholeTrip;
@@ -110,12 +52,18 @@ export default function TripDetail() {
   const getCoords = (point) => {
     setCoords(point);
   };
-  // useEffect(() => {
-  //   getDailyPlans(currentTrip).then((data) => {
-  //     console.log(data);
-  //     setTripDetail(data);
-  //   });
-  // }, [currentTrip]);
+  useEffect(() => {
+    getDailyPlans(currentTrip).then((data) => {
+      console.log(data);
+      setTripDetail({
+        trip_name: data.trip_name,
+        trip_id: data.trip_id,
+        start_date: data.start_date,
+        end_date: data.end_date,
+        daily_plans: data.daily_plans,
+      });
+    });
+  }, [currentTrip]);
   const [order, setOrder] = useState(0);
   const Back = () => {
     let navigate = useNavigate();
@@ -140,8 +88,8 @@ export default function TripDetail() {
       }
     );
   }, []);
-  const startDate = tripDetail.dailyplans[0].date;
-  const endDate = tripDetail.dailyplans[tripDetail.dailyplans.length - 1].date;
+  const startDate = tripDetail.start_date;
+  const endDate = tripDetail.end_date;
 
   return (
     <Grid container spacing={3} style={{ width: "100%" }}>
@@ -149,16 +97,16 @@ export default function TripDetail() {
         <div className="top">
           <Back />
           <div>
-            <h1 className="tripname">{tripDetail.tripname}</h1>
+            <h1 className="tripname">{tripDetail.trip_name}</h1>
             <h2>
               {startDate} - {endDate}
             </h2>
           </div>
         </div>
         <DailyPlanTabs
-          dailyplans={tripDetail.dailyplans}
-          days={tripDetail.dailyplans.map((item) => item.date)}
-          plans={tripDetail.dailyplans.map((item) => item.plan)}
+          daily_plans={tripDetail.daily_plans}
+          days={tripDetail.daily_plans?.map((item) => item.daily_plan_date)}
+          plans={tripDetail.daily_plans?.map((item) => item.placeEntryList)}
           setCoords={setCoords}
           onDelete={deleteTrip}
           getCoords={getCoords}

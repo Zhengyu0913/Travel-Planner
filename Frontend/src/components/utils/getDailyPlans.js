@@ -2,11 +2,7 @@ import axios from "axios";
 
 export const getDailyPlans = async (tripId) => {
   try {
-    const response = await axios.get("/api/alldailyplans", {
-      params: {
-        tripId: tripId,
-      },
-    });
+    const response = await axios.get(`/api/trip/${tripId}`);
 
     return response.data;
   } catch (error) {
