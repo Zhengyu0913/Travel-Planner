@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
@@ -15,7 +15,7 @@ import TripCards from "../components/TripCards";
 import Box from "@mui/material/Box";
 import FlightIcon from "@mui/icons-material/Flight";
 import AddIcon from "@mui/icons-material/Add";
-import {CircularProgress, Grid, grid2Classes, Typography} from "@mui/material";
+import {CircularProgress, Grid, Typography} from "@mui/material";
 import {message} from "antd"
 
 export default function Trips({onAddTrip, curTrips, setTrips, onDeleteTrip}) {
@@ -43,13 +43,6 @@ export default function Trips({onAddTrip, curTrips, setTrips, onDeleteTrip}) {
                         errorMessage = "Please login first!";
                     }
                     throw Error(errorMessage);
-                    // return res.json().then((data) => {
-                    //   let errorMessage = "Get trips failed!";
-                    //   if (data && data.error && data.error.message) {
-                    //     errorMessage = data.error.message;
-                    //   }
-                    //   throw new Error(errorMessage);
-                    // });
                 }
             })
             .then((data) => {

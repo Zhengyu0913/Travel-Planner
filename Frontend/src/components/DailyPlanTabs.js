@@ -1,8 +1,6 @@
 import * as React from "react";
-import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import TabContent from "./TabContent";
 
@@ -59,6 +57,9 @@ export default function DailyPlanTabs(props) {
                         plan={plan}
                         onDelete={props.onDelete}
                         getCoords={props.getCoords}
+                        deleteByTimeBlock={props.deleteByTimeBlock}
+                        deleteByDay={props.deleteByDay}
+                        entryId={props.entryId[index]}
                     />
                 </TabPanel>
             ))}
