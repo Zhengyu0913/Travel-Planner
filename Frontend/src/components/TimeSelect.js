@@ -25,10 +25,10 @@ export default function TimeSelect(props) {
           onChange={handleChange}
         >
           <MenuItem value={"BREAKFAST"}>Breakfast</MenuItem>
-          <MenuItem value={"LUNCH"}>Lunch</MenuItem>
-          <MenuItem value={"DINNER"}>Dinner</MenuItem>
           <MenuItem value={"MORNING"}>Morning</MenuItem>
+          <MenuItem value={"LUNCH"}>Lunch</MenuItem>
           <MenuItem value={"AFTERNOON"}>Afternoon</MenuItem>
+          <MenuItem value={"DINNER"}>Dinner</MenuItem>
           <MenuItem value={"NIGHT"}>Night</MenuItem>
           <MenuItem value={"STAY"}>Stay</MenuItem>
         </Select>

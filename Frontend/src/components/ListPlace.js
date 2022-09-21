@@ -22,7 +22,6 @@ import Cards from "./Cards";
 import MenuIcon from "@mui/icons-material/Menu";
 
 import DirectionsIcon from "@mui/icons-material/Directions";
-import NotFound from "../pages/NotFound";
 const List = ({
   type,
   places,

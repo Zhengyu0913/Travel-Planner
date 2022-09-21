@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import { Box, Container } from "@mui/material";
 import HeaderLeft from "./HeaderLeft";
 import HeaderRight from "./HeaderRight";
@@ -8,7 +8,7 @@ import { styled } from "@mui/material/styles";
 
 import IconButton from "@mui/material/IconButton";
 
-import HomeIcon from "@mui/icons-material/Home";
+import ExploreIcon from '@mui/icons-material/Explore';
 import CancelPresentationIcon from "@mui/icons-material/CancelPresentation";
 
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
@@ -32,43 +32,43 @@ import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
 import { AuthContext } from "../context/auth-context";
 import { signOut } from "./utils/signOut";
 const pages = [
-  { name: "Home", path: "/explore", icon: <HomeIcon></HomeIcon>, id: 0 },
+  { name: "Explore", path: "/explore", icon: <ExploreIcon/>, id: 0 },
 
   {
     name: "Trips",
     path: "/trips",
-    icon: <FlightTakeoffIcon></FlightTakeoffIcon>,
+    icon: <FlightTakeoffIcon/>,
     id: 1,
   },
   {
     name: "Orders",
     path: "/orders",
-    icon: <ReceiptIcon></ReceiptIcon>,
+    icon: <ReceiptIcon/>,
     id: 2,
   },
   {
     name: "Account",
     path: "/account",
-    icon: <AccountBoxIcon></AccountBoxIcon>,
+    icon: <AccountBoxIcon/>,
     id: 3,
   },
   {
     name: "Saved Places",
     path: "/saved_places",
-    icon: <FavoriteBorderIcon></FavoriteBorderIcon>,
+    icon: <FavoriteBorderIcon/>,
     id: 4,
   },
   {
     name: "Payment",
     path: "/payment",
-    icon: <PaymentIcon></PaymentIcon>,
+    icon: <PaymentIcon/>,
     id: 5,
   },
 
   {
     name: "Help",
     path: "/help",
-    icon: <HelpCenterIcon></HelpCenterIcon>,
+    icon: <HelpCenterIcon/>,
     id: 6,
   },
 ];
@@ -95,10 +95,12 @@ export default function Layout() {
   const [openDrawer, setOpenDrawer] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const authCtx = useContext(AuthContext);
+  const navigate = useNavigate();
   const logOutHandler = () => {
     authCtx.logout();
     signOut().then((res) => {
       console.log(res);
+      navigate("/home");
     });
     setOpenDrawer(false);
   };

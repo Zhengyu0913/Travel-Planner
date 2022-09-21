@@ -130,18 +130,23 @@ export default function SignUp() {
       },
     })
       .then((res) => {
+        let errorMessage = "Failed to sign up! Please check your type-in message or internet connection.";
         if (res.status < 200 || res.status >= 300) {
-          throw Error("Failed to sign up");
+          if(res.status === 409){
+            errorMessage = "The user is already exist!";
+          }
+          throw Error(errorMessage);
         }
       })
       .then((data) => {
         // console.log(data);
         // authCtx.login(data.idToken);
         // navigate("/");
-        message.success(`Successfully signed up`);
+        message.success(`Successfully signed up!`);
+        navigate("/signin");
       })
       .catch((err) => {
-        alert(err.message);
+        message.error(err.message);
       });
 
     setFirstNameInput("");
