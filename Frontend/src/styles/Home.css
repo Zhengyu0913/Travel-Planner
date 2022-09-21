@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
 .home {
     width: 100%;
     height: 100vh;
@@ -22,4 +24,35 @@
     /*background-image: url("../assets/images/10708211.jpg");*/
 }
 
+.quote{
+    height: 90vh;
+    width: 100vm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat Medium";
+    font-size: 35px;
+    text-align: center;
+    transform: scale(0.94);
+    animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+    /*mix-blend-mode: difference;*/
+}
+@keyframes scale {
+     100% {
+         transform: scale(1);
+     }
+ }
 
+.span {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(4px);
+    animation: fade-in 0.8s 1.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+@keyframes fade-in {
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}

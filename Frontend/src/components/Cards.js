@@ -24,8 +24,8 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { AuthContext } from "../context/auth-context";
 import { useNavigate } from "react-router-dom";
 
-import { addTripToBackend } from "./utils/addTripToBackend";
 import { addDailyPlanToBackend } from "./utils/addDailyPlanToBackend";
+import {message} from "antd"
 
 export default function Cards({
   refProp,
@@ -99,6 +99,7 @@ export default function Cards({
     setTripName(e.target.value);
   };
   const confirmAddTripHandler = () => {
+
     console.log(tripFrom, tripTo);
     const dateArr = getAllDate(tripFrom, tripTo);
     console.log(dateArr);
@@ -107,9 +108,11 @@ export default function Cards({
 
     console.log(JSON.stringify({ name: tripName, date: dateArr })); //发送给后端
     setOpen(false);
+    message.loading("Adding trip...",5);
   };
 
   const confirmAddDailyPlanHandler = () => {
+    message.loading("Adding daily plan to trip...", 3);
     const dailyPlan = {
       trip_id: currentSelectedTrip,
       place_entry_name: placeName,
@@ -120,21 +123,27 @@ export default function Cards({
       longitude: placeLng,
     };
     addDailyPlanToBackend(dailyPlan)
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        } else {
-          return res.json().then((data) => {
-            let errorMessage = "Add trip failed!";
-            throw new Error(errorMessage);
-          });
-        }
-      })
+      // .then((res) => {
+      //   if (res.status >= 200 || res.status < 300) {
+      //     message.success("Add daily plan success!",3)
+      //     return res.json();
+      //   } else {
+      //     console.log(res);
+      //     let errorMessage = "Add daily plan failed!";
+      //     throw Error(errorMessage);
+      //   }
+      // })
       .then((data) => {
         console.log(data);
+        if (data.status >= 200 || data.status < 300) {
+          message.success("Add daily plan success!",3)
+        } else {
+          let errorMessage = "Add daily plan failed!";
+          throw Error(errorMessage);
+        }
       })
       .catch((err) => {
-        alert(err.message);
+        message.error(err.message, 3);
       });
     console.log(JSON.stringify(dailyPlan)); //发送给后端
     setOpenDailyPlan(false);

@@ -1,3 +1,4 @@
+import { message } from "antd";
 import { Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -48,13 +49,18 @@ export default function Explore({
         if (res.ok) {
           return res.json();
         } else {
-          return res.json().then((data) => {
-            let errorMessage = "Get trips failed!";
-            if (data && data.error && data.error.message) {
-              errorMessage = data.error.message;
-            }
-            throw new Error(errorMessage);
-          });
+          let errorMessage = "Get trips failed! Check your internet connection.";
+          if (res.status === 500 || res.status === 403 || res.status === 401) {
+            errorMessage = "Please login first!";
+          }
+          throw Error(errorMessage);
+          // return res.json().then((data) => {
+          //   let errorMessage = "Get trips failed!";
+          //   if (data && data.error && data.error.message && res.status === 500) {
+          //     errorMessage = "Please login first!";
+          //   }
+          //   throw Error("Get trips failed!");
+          // });
         }
       })
       .then((data) => {
@@ -69,12 +75,9 @@ export default function Explore({
         });
         console.log(newData);
         setTrips(newData);
-
-        // navigate("/explore");
       })
       .catch((err) => {
-        // alert(err.message);
-        console.log(err);
+        message.error(err.message,3);
         navigate("/signin");
       });
   }, [setTrips, navigate]);

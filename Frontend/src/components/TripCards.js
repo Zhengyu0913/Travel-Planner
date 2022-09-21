@@ -7,6 +7,7 @@ import ButtonBase from "@mui/material/ButtonBase";
 import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
+import {message} from "antd"
 
 const Img = styled("img")({
   margin: "auto",
@@ -19,6 +20,7 @@ export default function TripCards(props) {
   const deleteTrip = () => {
     console.log(props.tripId);
     props.onDeleteTrip(props.tripId);
+    message.loading("Deleting trip...", 3);
   };
 
   return (
@@ -72,14 +74,14 @@ export default function TripCards(props) {
               {/*   Remove*/}
               {/*  todo: add eventListener*/}
               {/*</Typography>*/}
-              <Button onClick={deleteTrip}>Remove</Button>
+              <Button loading={props.loading} onClick={deleteTrip}>Remove</Button>
             </Grid>
           </Grid>
-          <Grid item>
-            <Typography variant="subtitle1" component="div">
-              Todo: getPriceHere
-            </Typography>
-          </Grid>
+          {/*<Grid item>*/}
+          {/*  <Typography variant="subtitle1" component="div">*/}
+          {/*    Todo: getPriceHere*/}
+          {/*  </Typography>*/}
+          {/*</Grid>*/}
         </Grid>
       </Grid>
     </Paper>
