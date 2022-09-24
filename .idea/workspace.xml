@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Backend:war exploded" />
+      <artifact name="travelPlanner:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,32 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32fe05fa-9b1a-4676-95d7-770e7a24b37c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/55d70b04-4227-426d-b577-9e0a28310604.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/55d70b04-4227-426d-b577-9e0a28310604/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/55d70b04-4227-426d-b577-9e0a28310604/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/55d70b04-4227-426d-b577-9e0a28310604/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/55d70b04-4227-426d-b577-9e0a28310604/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/55d70b04-4227-426d-b577-9e0a28310604/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/controller/PlaceEntryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/controller/PlaceEntryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/controller/TripController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/controller/TripController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/dao/PlaceEntryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/dao/PlaceEntryDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/entity/DailyPlan.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/entity/DailyPlan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/entity/Trip.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/entity/Trip.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/request/AddPlaceEntryRequestBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/request/AddPlaceEntryRequestBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/service/DailyPlanService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/service/DailyPlanService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/service/PlaceEntryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/laioffer/travelPlanner/service/PlaceEntryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/controller/PlaceEntryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/controller/PlaceEntryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/controller/TripController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/controller/TripController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/dao/PlaceEntryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/dao/PlaceEntryDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/DailyPlan.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/DailyPlan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/Trip.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/Trip.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/request/AddPlaceEntryRequestBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/request/AddPlaceEntryRequestBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/service/DailyPlanService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/service/DailyPlanService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/service/PlaceEntryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/travelPlanner-1.0-SNAPSHOT/WEB-INF/classes/com/laioffer/travelPlanner/service/PlaceEntryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Backend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/travelPlanner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/travelPlanner.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,13 +61,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 9.0.22" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.22" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.60" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.60" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="Backend:war exploded">
+        <artifact name="travelPlanner:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -170,6 +149,7 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="Backend:war exploded" />
+          <artifact name="travelPlanner:war exploded" />
         </option>
       </method>
     </configuration>
@@ -186,6 +166,7 @@
       <workItem from="1663097068211" duration="1477000" />
       <workItem from="1663218036130" duration="1874000" />
       <workItem from="1663543578936" duration="5345000" />
+      <workItem from="1664047682533" duration="1126000" />
     </task>
     <servers />
   </component>
