@@ -1,4 +1,4 @@
-import {useContext, useEffect, useState} from "react";
+import { useContext, useEffect, useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -23,8 +23,8 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { AuthContext } from "../context/auth-context";
 import { Paper } from "@mui/material";
-import {message} from "antd"
-import {getAllDate} from "../components/utils/getAllDate"
+import { message } from "antd";
+import { getAllDate } from "../components/utils/getAllDate";
 
 function Copyright(props) {
   return (
@@ -117,7 +117,8 @@ export default function SignIn() {
       })
       .then((data) => {
         console.log(data);
-        message.success("Welcome back.")
+        authCtx.login("token");
+        message.success("Welcome back.");
         navigate("/explore");
       })
       .catch((err) => {
@@ -146,20 +147,21 @@ export default function SignIn() {
         "Content-Type": "application/json",
       },
     })
-        .then((res) => {
-          console.log(res);
-          if (res.ok) {
-            message.info("You have already logged in!");
-            navigate("/explore");
-            return res.json();
-          } else if(res.status === 404){
-            let errorMessage = "Connect to server failed! Please check your internet connection.";
-            throw Error(errorMessage);
-          }
-        })
-        .catch((err) => {
-          message.error(err.message, 3);
-        });
+      .then((res) => {
+        console.log(res);
+        if (res.ok) {
+          message.info("You have already logged in!");
+          navigate("/explore");
+          return res.json();
+        } else if (res.status === 404) {
+          let errorMessage =
+            "Connect to server failed! Please check your internet connection.";
+          throw Error(errorMessage);
+        }
+      })
+      .catch((err) => {
+        message.error(err.message, 3);
+      });
   }, [navigate]);
   return (
     <ThemeProvider theme={theme}>

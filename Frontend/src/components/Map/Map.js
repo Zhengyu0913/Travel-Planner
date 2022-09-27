@@ -14,7 +14,7 @@ const Map = (props) => {
       }}
     >
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyDDG5O-kpOu3yi62M1RXWdw587g0qe6wo0" }}
+        bootstrapURLKeys={{ key: "YOURAPIKEY" }}
         center={props.coords}
         defaultZoom={14}
         margin={[50, 50, 50, 50]}
