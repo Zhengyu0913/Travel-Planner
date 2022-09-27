@@ -25,7 +25,7 @@ import { AuthContext } from "../context/auth-context";
 import { useNavigate } from "react-router-dom";
 
 import { addDailyPlanToBackend } from "./utils/addDailyPlanToBackend";
-import {message} from "antd"
+import { message } from "antd";
 
 export default function Cards({
   refProp,
@@ -99,8 +99,11 @@ export default function Cards({
     setTripName(e.target.value);
   };
   const confirmAddTripHandler = () => {
-
     console.log(tripFrom, tripTo);
+    if (tripFrom > tripTo) {
+      message.error("Invalid date");
+      return;
+    }
     const dateArr = getAllDate(tripFrom, tripTo);
     console.log(dateArr);
     const tripId = Math.floor(Math.random() * 100000);
@@ -108,7 +111,7 @@ export default function Cards({
 
     console.log(JSON.stringify({ name: tripName, date: dateArr })); //发送给后端
     setOpen(false);
-    message.loading("Adding trip...",5);
+    message.loading("Adding trip...", 5);
   };
 
   const confirmAddDailyPlanHandler = () => {
@@ -136,7 +139,7 @@ export default function Cards({
       .then((data) => {
         console.log(data);
         if (data.status >= 200 || data.status < 300) {
-          message.success("Add daily plan success!",3)
+          message.success("Add daily plan success!", 3);
         } else {
           let errorMessage = "Add daily plan failed!";
           throw Error(errorMessage);
